@@ -1,0 +1,14 @@
+<div class="admin-page-content">
+  <div class="admin-main-content">
+    <header>
+      <a routerLink="/" class="admin-main-title"></a>
+    </header>
+    <main>
+      <mat-card class="admin-card-content">
+        <mat-card-title class="admin-card-content-title">{{ pageTitle }}</mat-card-title>
+        <mat-card-subtitle class="admin-card-content-subtitle">{{ description }}</mat-card-subtitle>
+        <ng-content></ng-content>
+      </mat-card>
+    </main>
+  </div>
+</div>

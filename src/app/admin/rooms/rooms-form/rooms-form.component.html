@@ -1,0 +1,23 @@
+<app-admin-page pageTitle="Criar nova sala">
+<form id="room-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Número</mat-label>
+    <input matInput formControlName="number" name="number">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="name" name="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Nome Sed</mat-label>
+    <input matInput formControlName="sedName" name="sedName">
+  </mat-form-field>
+
+  <mat-card-actions>
+    <button class="button button-white" type="submit" mat-raised-button form="room-form" color="primary">Cadastrar</button>
+  </mat-card-actions>
+</form>
+</app-admin-page>
