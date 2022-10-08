@@ -59,8 +59,9 @@ header {
 main {
   text-align: center;
 
-  @media screen and (min-width: 500px) {
-    max-width: 450px;
+  @media screen and (min-width: 600px) {
+    max-width: 1000px;
     margin: auto;
   }
+
 }

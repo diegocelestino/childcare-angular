@@ -1,27 +1,41 @@
-<app-admin-page title="Salas">
-<article class="container">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<app-admin-page title="Salas" inlinePageTitle="Salas">
 
-    <ng-container matColumnDef="number">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+  <article class="tab_container">
+    <ng-container *ngIf="(dataSource | async) === null">
+      Loading tabs...
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
+    <mat-tab-group mat-align-tabs="center">
+      <div class="tab-list">
+        <mat-tab class="item-tab-list" *ngFor="let element of dataSource | async">
+          <ng-template mat-tab-label>{{element.number}}</ng-template>
+        </mat-tab>
+      </div>
+    </mat-tab-group>
 
-    <ng-container matColumnDef="sedName">
-      <th mat-header-cell *matHeaderCellDef> Sed </th>
-      <td mat-cell *matCellDef="let element"> {{element.sedName}} </td>
-    </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+<!--  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">-->
 
-  </table>
+    <!--    <ng-container  matColumnDef="number">-->
+    <!--      <th class="min" mat-header-cell *matHeaderCellDef> No. </th>-->
+    <!--      <td class="min" mat-cell *matCellDef="let element"> {{element.number}} </td>-->
+    <!--    </ng-container>-->
 
-</article>
+    <!--    &lt;!&ndash; Name Column &ndash;&gt;-->
+    <!--    <ng-container matColumnDef="name" class="median">-->
+    <!--      <th mat-header-cell *matHeaderCellDef> Name </th>-->
+    <!--      <td mat-cell *matCellDef="let element"> {{element.name}} </td>-->
+    <!--    </ng-container>-->
+
+    <!--    <ng-container matColumnDef="sedName"  class="median">-->
+    <!--      <th mat-header-cell *matHeaderCellDef> Sed </th>-->
+    <!--      <td mat-cell *matCellDef="let element"> {{element.sedName}} </td>-->
+    <!--    </ng-container>-->
+
+    <!--    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+    <!--    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>-->
+
+    <!--  </table>-->
+
+  </article>
 </app-admin-page>

@@ -12,7 +12,7 @@ export class AdminPageComponent implements OnInit {
   @Input()
   description: string = '';
   @Input()
-  secondDescription: string = '';
+  inlinePageTitle: string = '';
 
 
   constructor() { }

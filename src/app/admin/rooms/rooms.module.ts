@@ -13,6 +13,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {SharedModule} from "../../shared/shared.module";
 import {MatInputModule} from "@angular/material/input";
 import {MatTableModule} from "@angular/material/table";
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 @NgModule({
@@ -21,18 +22,19 @@ import {MatTableModule} from "@angular/material/table";
     RoomsListComponent,
     RoomsFormComponent,
   ],
-  imports: [
-    CommonModule,
-    RoomsRoutingModule,
-    ReactiveFormsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    SharedModule,
-    MatInputModule,
-    CoreModule,
-    MatTableModule,
+    imports: [
+        CommonModule,
+        RoomsRoutingModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        SharedModule,
+        MatInputModule,
+        CoreModule,
+        MatTableModule,
+        MatTabsModule,
 
-  ]
+    ]
 })
 export class RoomsModule { }
