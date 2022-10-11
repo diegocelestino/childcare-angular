@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {RoomDto} from "../../../core/models/room.model";
-import {MatTable, MatTableDataSource} from "@angular/material/table";
 import {RoomService} from "../../../core/services/room.service";
-import {map, Observable} from "rxjs";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-rooms-list',
@@ -11,18 +10,23 @@ import {map, Observable} from "rxjs";
 })
 export class RoomsListComponent implements OnInit {
   displayedColumns: string[] = ['number', 'name', 'sedName'];
-  dataSource: Observable<RoomDto[]>;
+  roomsDto: RoomDto[] = [];
 
   constructor(
     private roomService: RoomService,
   ) {
-    this.dataSource = this.roomService.getRooms()
-      .pipe(
-      map(results => results.sort((a, b) =>
-        a.number.toLocaleString().localeCompare(b.number.toLocaleString())))
-    );
+    this.roomService.getRooms()
+      .subscribe(rooms => {
+        this.roomsDto = rooms.sort((a, b) =>
+          a.number.toString().localeCompare(b.number.toLocaleString()));
+        console.log(rooms);
+      });
+
   }
 
   ngOnInit(): void {}
 
+  logId(id: string){
+    console.log(id);
+  }
 }

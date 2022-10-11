@@ -1,8 +1,11 @@
+import {SubgroupDto} from "./subgroups.model";
+
 export interface RoomDto {
   id: string;
   number: number;
   name: string;
   sedName: string;
+  subgroups: SubgroupDto[]
 }
 
 export class RoomCreateDto {

@@ -18,11 +18,18 @@
 
 
 .tab_container {
-  position: absolute;
+  position: center;
   left: 0;
   right: 0;
   top: 0;
   padding: 0 24px;
   background-color: transparent !important;
-  z-index: 500;
+  //z-index: 500;
+}
+
+.subgroup-item {
+  margin-top: 20px;
+  cursor: pointer;
+  position: center;
+  border-bottom-style: groove;
 }

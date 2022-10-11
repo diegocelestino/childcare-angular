@@ -12,6 +12,11 @@ const routes: Routes = [
         loadChildren: () => import('./rooms/rooms.module').then(m => m.RoomsModule),
         title: 'Salas'
       },
+      {
+        path: 'subgroups',
+        loadChildren: () => import('./subgroups/subgroups.module').then(m => m.SubgroupsModule),
+        title: 'Subgrupos'
+      },
     ]
   }
 ];

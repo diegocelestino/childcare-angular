@@ -1,0 +1,23 @@
+<app-admin-page pageTitle="Criar novo subgrupo">
+  <form id="subgroup-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Ciclo</mat-label>
+      <input matInput formControlName="cycle" name="cycle">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Período</mat-label>
+      <input matInput formControlName="period" name="period">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Capacidade</mat-label>
+      <input matInput formControlName="capacity" name="capacity">
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button class="button button-white" type="submit" mat-raised-button form="subgroup-form" color="primary">Cadastrar</button>
+    </mat-card-actions>
+  </form>
+</app-admin-page>
