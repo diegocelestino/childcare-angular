@@ -5,6 +5,7 @@ import {RoomsListComponent} from "../rooms/rooms-list/rooms-list.component";
 import {RoomsFormComponent} from "../rooms/rooms-form/rooms-form.component";
 import {SubgroupsComponent} from "./subgroups.component";
 import {SubgroupsFormComponent} from "./subgroups-form/subgroups-form.component";
+import {SubgroupsShowComponent} from "./subgroups-show/subgroups-show.component";
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
       {
         path: 'new',
         component: SubgroupsFormComponent,
+      },
+      {
+        path: ':subgroupId',
+        component: SubgroupsShowComponent,
       },
     ]
   }

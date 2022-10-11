@@ -2,18 +2,35 @@
   <form id="subgroup-form" [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Ciclo</mat-label>
-      <input matInput formControlName="cycle" name="cycle">
-    </mat-form-field>
+    <mat-label>Ciclo</mat-label>
+    <mat-select formControlName="cycle" name="cycle" placeholder="Ciclo">
+      <mat-option *ngFor="let cycle of cycleKeys" [value]="cycle">
+        {{cycle | cycle | titlecase}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Período</mat-label>
-      <input matInput formControlName="period" name="period">
+      <mat-select formControlName="period" name="period" placeholder="Período">
+        <mat-option *ngFor="let period of periodKeys" [value]="period">
+          {{period | period | titlecase}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Sala</mat-label>
+      <mat-select formControlName="roomId" name="roomId" placeholder="Sala">
+        <mat-option *ngFor="let room of rooms" [value]="room.id">
+          {{room.number}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Capacidade</mat-label>
-      <input matInput formControlName="capacity" name="capacity">
+      <input matInput formControlName="capacity" name="capacity" type="number">
     </mat-form-field>
 
     <mat-card-actions>

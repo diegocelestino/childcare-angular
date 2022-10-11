@@ -5,16 +5,23 @@ import {SharedModule} from "../shared/shared.module";
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import {RouterModule} from "@angular/router";
 import {MatCardModule} from "@angular/material/card";
+import { PeriodPipe } from './pipes/period.pipe';
+import { CyclePipe } from './pipes/cycle.pipe';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
     AdminHeaderComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    PeriodPipe,
+    CyclePipe
   ],
 
   exports: [
     AdminHeaderComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    PeriodPipe,
+    CyclePipe
   ],
 
   imports: [
@@ -22,6 +29,7 @@ import {MatCardModule} from "@angular/material/card";
     SharedModule,
     RouterModule,
     MatCardModule,
+    MatMenuModule,
   ]
 })
 export class CoreModule { }

@@ -6,19 +6,23 @@ import { SubgroupsFormComponent } from './subgroups-form/subgroups-form.componen
 import {ReactiveFormsModule} from "@angular/forms";
 import {CoreModule} from "../../core/core.module";
 import {SharedModule} from "../../shared/shared.module";
+import {MatSelectModule} from "@angular/material/select";
+import { SubgroupsShowComponent } from './subgroups-show/subgroups-show.component';
 
 
 @NgModule({
   declarations: [
 
-    SubgroupsFormComponent
+    SubgroupsFormComponent,
+     SubgroupsShowComponent
   ],
   imports: [
     CommonModule,
     SubgroupsRoutingModule,
     ReactiveFormsModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    MatSelectModule
   ]
 })
 export class SubgroupsModule { }

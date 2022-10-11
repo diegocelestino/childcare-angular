@@ -17,6 +17,11 @@ const routes: Routes = [
         loadChildren: () => import('./subgroups/subgroups.module').then(m => m.SubgroupsModule),
         title: 'Subgrupos'
       },
+      {
+        path: 'children',
+        loadChildren: () => import('./children/children.module').then(m => m.ChildrenModule),
+        title: 'Criança'
+      },
     ]
   }
 ];

@@ -23,3 +23,17 @@ export class RoomCreateDto {
     this.sedName = sedName;
   }
 }
+
+  export class RoomListDto {
+  id: string;
+  number: number;
+
+  constructor(
+    id: string,
+    number: number,
+
+  ) {
+    this.id = id;
+    this.number = number;
+  }
+}

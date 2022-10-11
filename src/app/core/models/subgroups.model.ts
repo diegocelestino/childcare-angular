@@ -1,20 +1,23 @@
+import {ChildDto} from "./child.model";
+
 export interface SubgroupDto {
   id: string;
-  cycle: string;
-  period: string;
+  cycle: Cycle;
+  period: Period;
   capacity: number;
-  roomId: string;
+  teachers: string[];
+  children: ChildDto[];
 }
 
 export class SubgroupCreateDto {
-  cycle: string;
-  period: string;
+  cycle: Cycle;
+  period: Period;
   capacity: number;
   roomId: string;
 
   constructor(
-    cycle: string,
-    period: string,
+    cycle: Cycle,
+    period: Period,
     capacity: number,
     roomId: string,
   ) {
@@ -23,4 +26,16 @@ export class SubgroupCreateDto {
     this.capacity = capacity;
     this.roomId = roomId;
   }
+}
+
+export enum Cycle {
+  MATERNAL = ("Berçário"),
+  INITIAL = ("Inicial"),
+  FINAL = ("Final"),
+}
+
+export enum Period {
+  MORNING = ("Manhã"),
+  AFTERNOON = ("Tarde"),
+  INTEGRAL = ("Integral"),
 }

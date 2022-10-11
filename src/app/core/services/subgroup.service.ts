@@ -20,9 +20,7 @@ export class SubgroupService extends BaseService{
     return this.httpClient.post<SubgroupDto>(this.apiUrl, subgroupCreateDto, this.httpOptions);
   }
 
-  getSubgroups(roomId: string | undefined): Observable<SubgroupDto[]>{
-    console.log(this.apiUrl + "/" + roomId);
-    return this.httpClient.get<SubgroupDto[]>(this.apiUrl + "/" + roomId, this.httpOptions);
+  getSubgroupById(subgroupId: string): Observable<SubgroupDto> {
+    return this.httpClient.get<SubgroupDto>(this.apiUrl + "/" + subgroupId, this.httpOptions);
   }
-
 }

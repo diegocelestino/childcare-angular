@@ -3,7 +3,8 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {NotificationService} from "../../../core/services/notification.service";
 import {SubgroupService} from "../../../core/services/subgroup.service";
-import {SubgroupCreateDto} from "../../../core/models/subgroups.model";
+import {Cycle, Period, SubgroupCreateDto} from "../../../core/models/subgroups.model";
+import {RoomListDto} from "../../../core/models/room.model";
 
 @Component({
   selector: 'app-subgroups-form',
@@ -12,6 +13,11 @@ import {SubgroupCreateDto} from "../../../core/models/subgroups.model";
 })
 export class SubgroupsFormComponent implements OnInit {
   form: FormGroup;
+  periodClass = Period;
+  cycleClass = Cycle;
+  rooms: RoomListDto[] = [];
+  periodKeys: any = [];
+  cycleKeys: any = [];
   submitted: boolean = false;
 
   constructor(
@@ -20,7 +26,10 @@ export class SubgroupsFormComponent implements OnInit {
     private subgroupService: SubgroupService,
     private notificationServise: NotificationService,
   ) {
+    this.periodKeys = Object.keys(this.periodClass);
+    this.cycleKeys = Object.keys(this.cycleClass);
     this.form = this.buildForm();
+    this.rooms = this.getRoomsFromLocalStorage();
   }
 
   ngOnInit(): void {
@@ -40,7 +49,7 @@ export class SubgroupsFormComponent implements OnInit {
       this.form.value['cycle'],
       this.form.value['period'],
       this.form.value['capacity'],
-      "c1eb4e88-e24a-49a3-bf6a-4b12b7575ebe"
+      this.form.value['roomId'],
     );
 
     this.subgroupService.postSubgroup(subgroupCreateDto).pipe()
@@ -55,11 +64,25 @@ export class SubgroupsFormComponent implements OnInit {
 
   }
 
+  getRoomsFromLocalStorage(): RoomListDto[]{
+    let rooms: RoomListDto[] = [];
+    for (let item in localStorage){
+      if (item.toString().startsWith("room")){
+        rooms.push(new RoomListDto(
+          localStorage.getItem(item)!.toString().split("ROOM")[0],
+          parseInt(localStorage.getItem(item)!.toString().split("ROOM")[1]))
+        );
+      }
+    }
+    return rooms.sort((a, b) => a.number - b.number);
+  }
+
   private buildForm() {
     return this.formBuilder.group({
       cycle: [''],
       period: [''],
       capacity: [''],
+      roomId: [''],
     });
   }
 

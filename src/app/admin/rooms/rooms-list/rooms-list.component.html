@@ -7,8 +7,8 @@
     <mat-tab-group>
       <mat-tab class="tab-list" *ngFor="let element of roomsDto" label="{{element.number}}">
         <mat-card class="subgroup-item" *ngFor="let subgroup of element.subgroups">
-          <mat-card-title (click)="logId(subgroup.id)">
-            {{subgroup.cycle}} {{subgroup.period}}
+          <mat-card-title (click)="openSubgroup(subgroup.id)">
+            {{ subgroup.cycle | cycle | titlecase}} {{subgroup.period | period | titlecase }}
           </mat-card-title>
         </mat-card>
       </mat-tab>

@@ -6,6 +6,7 @@ import { AdminComponent } from "./admin.component";
 import {CoreModule} from "../core/core.module";
 import {RoomsModule} from "./rooms/rooms.module";
 import { SubgroupsComponent } from './subgroups/subgroups.component';
+import { ChildrenComponent } from './children/children.component';
 
 
 
@@ -13,6 +14,7 @@ import { SubgroupsComponent } from './subgroups/subgroups.component';
     declarations: [
         AdminComponent,
         SubgroupsComponent,
+        ChildrenComponent,
     ],
     exports: [
         AdminComponent
