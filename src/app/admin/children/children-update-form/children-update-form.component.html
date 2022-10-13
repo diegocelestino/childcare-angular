@@ -1,6 +1,6 @@
 <app-admin-page pageTitle="Editar Criança">
 
-  <div class="container__table">
+  <div class="link">
     <button mat-menu-item (click)="backLink()">
       <mat-icon>arrow_back</mat-icon>
       <span>Voltar</span>
@@ -14,22 +14,22 @@
       <input matInput formControlName="name" name="name">
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="full-width">
+    <mat-form-field appearance="outline" class="half-width">
       <mat-label>Data de Nascimento</mat-label>
       <input matInput formControlName="birthDate" name="birthDate">
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="full-width">
+    <mat-form-field appearance="outline" class="half-width">
       <mat-label>RA</mat-label>
       <input matInput formControlName="registrationNumber" name="registrationNumber">
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="full-width">
+    <mat-form-field appearance="outline" class="third-width">
       <mat-label>Data de matrícula</mat-label>
       <input matInput formControlName="registrationDate" name="registrationDate">
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="full-width">
+    <mat-form-field appearance="outline" class="third-width">
       <mat-label>Mapa de movimento</mat-label>
       <mat-select formControlName="movimentMap" name="movimentMap" placeholder="Mapa de Movimento">
         <mat-option *ngFor="let month of movimentMapKeys" [value]="month">
@@ -38,25 +38,30 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Restrição alimentar</mat-label>
-      <textarea matInput formControlName="foodRestriction" name="foodRestriction"></textarea>
-    </mat-form-field>
 
-    <mat-form-field appearance="outline" class="full-width">
+    <mat-form-field appearance="outline" class="third-width">
       <mat-label>Dispacho do Uniforme</mat-label>
       <input matInput name="uniformDispatch" formControlName="uniformDispatch">
     </mat-form-field>
 
-    <fieldset>
-        <mat-label class="full-width">Uniforme Entregue</mat-label>
-        <mat-slide-toggle class="mat-slide-toggle-content" formControlName="uniformDelivered"></mat-slide-toggle>
-    </fieldset>
+    <div class="half-width">
+      <fieldset>
+        <mat-label >Uniforme Entregue</mat-label>
+        <mat-slide-toggle formControlName="uniformDelivered"></mat-slide-toggle>
+      </fieldset>
+    </div>
 
-    <fieldset >
-      <mat-label appearance="outline" class="full-width">Censo</mat-label>
-      <mat-slide-toggle class="mat-slide-toggle-content" formControlName="census"></mat-slide-toggle>
-    </fieldset>
+    <div class="half-width">
+      <fieldset>
+        <mat-label>Censo</mat-label>
+        <mat-slide-toggle  formControlName="census"></mat-slide-toggle>
+      </fieldset>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Restrição alimentar</mat-label>
+      <textarea matInput formControlName="foodRestriction" name="foodRestriction"></textarea>
+    </mat-form-field>
 
     <mat-card-actions>
       <button class="button button-red" type="reset" mat-button form="child-update-form" color="secondary" (click)="backLink()">Cancelar</button>

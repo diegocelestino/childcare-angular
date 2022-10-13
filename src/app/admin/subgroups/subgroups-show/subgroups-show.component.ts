@@ -30,6 +30,7 @@ export class SubgroupsShowComponent implements OnInit {
   ngOnInit(): void {
     this.loaderService.show()
     this.getSubgroup(this.subgroupId);
+    localStorage.setItem("lastSubgroupOpened", this.subgroupId);
   }
 
   private getSubgroup(subgroupId: string) {

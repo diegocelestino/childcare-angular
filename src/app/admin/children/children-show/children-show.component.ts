@@ -13,6 +13,7 @@ import {ChildService} from "../../../core/services/child.service";
 export class ChildrenShowComponent implements OnInit {
   childDto: ChildDto | undefined;
   childId: string;
+  subgroupId: string;
 
   constructor(
     private childService: ChildService,
@@ -21,7 +22,7 @@ export class ChildrenShowComponent implements OnInit {
     private loaderService: LoaderService,
   ) {
     this.childId = this.route.snapshot.paramMap.get('childId')!;
-
+    this.subgroupId = localStorage.getItem("lastSubgroupOpened")!;
   }
 
   ngOnInit(): void {
@@ -41,5 +42,9 @@ export class ChildrenShowComponent implements OnInit {
 
   updateChild(childId: string) {
     this.router.navigate(['admin', 'children', 'edit', childId]);
+  }
+
+  backLink() {
+    this.router.navigate(['admin','subgroups', this.subgroupId]);
   }
 }
