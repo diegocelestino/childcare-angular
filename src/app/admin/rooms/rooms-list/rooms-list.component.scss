@@ -28,6 +28,11 @@
 .subgroup-item {
   margin-top: 20px;
   cursor: pointer;
-  position: center;
   border-bottom-style: groove;
+  line-height: 10px;
+}
+
+.number {
+  width: 100%;
+  height: 2px;
 }

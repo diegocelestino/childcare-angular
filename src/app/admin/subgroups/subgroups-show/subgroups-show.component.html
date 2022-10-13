@@ -1,13 +1,46 @@
 <div *ngIf="subgroupDto">
-  <app-admin-page>
+
+  <app-admin-page pageTitle="Subgrupo">
+
+    <div class="container__table">
+      <button mat-menu-item (click)="backLink()">
+        <mat-icon>arrow_back</mat-icon>
+        <span>Voltar</span>
+      </button>
+    </div>
+
+    <div class="container__table">
+      <button mat-menu-item (click)="addNewChild()">
+        <mat-icon>add_circle</mat-icon>
+        <span>Adicionar nova Criança</span>
+      </button>
+    </div>
+
   <article class="container">
+   <table class="container__table__bigger">
+     <ng-container matColumnDef="cycle">
+       <th mat-header-cell>Ciclo</th>
+       <td mat-cell>{{ subgroupDto.cycle | cycle | titlecase }}</td>
+     </ng-container>
 
-    <h3>Dados</h3>
-    <p class="container__item"><b>Ciclo:</b> {{ subgroupDto.cycle }}</p>
-    <p class="container__item" ><b>Período</b> {{ subgroupDto.period }}</p>
-    <p class="container__item"><b>Capacidade</b> {{ subgroupDto.capacity }}</p>
-    <p class="container__item"><b>Profs</b> {{ subgroupDto.teachers}}</p>
+     <ng-container matColumnDef="period">
+       <th mat-header-cell>Período</th>
+       <td mat-cell>{{ subgroupDto.period | period | titlecase }}</td>
+     </ng-container>
 
+     <ng-container matColumnDef="capacity">
+       <th mat-header-cell>Capacidade</th>
+       <td mat-cell>{{ subgroupDto.capacity }}</td>
+     </ng-container>
+
+     <ng-container matColumnDef="teachers">
+       <th mat-header-cell>Profs</th>
+       <td mat-cell>{{ subgroupDto.teachers }}</td>
+     </ng-container>
+
+   </table>
+
+    <br>
 
     <table mat-table class="container__table"
            [dataSource]="dataSource">
@@ -32,7 +65,7 @@
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openChild(row)"></tr>
     </table>
 
   </article>

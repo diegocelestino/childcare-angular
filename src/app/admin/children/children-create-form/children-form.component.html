@@ -1,0 +1,46 @@
+<app-admin-page pageTitle="Adicionar Criança">
+
+  <div class="container__table">
+    <button mat-menu-item (click)="backLink()">
+      <mat-icon>arrow_back</mat-icon>
+      <span>Voltar</span>
+    </button>
+  </div>
+
+  <form id="child-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="name" name="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Data de Nascimento</mat-label>
+      <input matInput formControlName="birthDate" name="birthDate">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>RA</mat-label>
+      <input matInput formControlName="registrationNumber" name="registrationNumber">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Data de matrícula</mat-label>
+      <input matInput formControlName="registrationDate" name="registrationDate">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Mapa de movimento</mat-label>
+      <mat-select formControlName="movimentMap" name="movimentoMap" placeholder="Mapa de Movimento">
+        <mat-option *ngFor="let month of movimentMapKeys" [value]="month">
+          {{month | movimentMap | titlecase}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button class="button button-red" type="reset" mat-button form="child-form" color="secondary" (click)="backLink()">Cancelar</button>
+      <button class="button button-white" type="submit" mat-raised-button form="child-form" color="primary">Cadastrar</button>
+    </mat-card-actions>
+  </form>
+</app-admin-page>

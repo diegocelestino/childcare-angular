@@ -8,20 +8,23 @@ import {MatCardModule} from "@angular/material/card";
 import { PeriodPipe } from './pipes/period.pipe';
 import { CyclePipe } from './pipes/cycle.pipe';
 import {MatMenuModule} from "@angular/material/menu";
+import { MovimentMapPipe } from './pipes/moviment-map.pipe';
 
 @NgModule({
   declarations: [
     AdminHeaderComponent,
     AdminPageComponent,
     PeriodPipe,
-    CyclePipe
+    CyclePipe,
+    MovimentMapPipe
   ],
 
   exports: [
     AdminHeaderComponent,
     AdminPageComponent,
     PeriodPipe,
-    CyclePipe
+    CyclePipe,
+    MovimentMapPipe
   ],
 
   imports: [

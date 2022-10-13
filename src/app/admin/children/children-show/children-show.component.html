@@ -1,0 +1,24 @@
+<app-admin-page>
+
+  <div class="container__table">
+    <button mat-menu-item (click)="updateChild(childId)">
+      <mat-icon>arrow_back</mat-icon>
+      <span>Editar</span>
+    </button>
+  </div>
+
+
+    <article *ngIf="childDto">
+    <h3>Dados</h3>
+    <p class="container__item"><b>Nome:</b> {{ childDto.name }}</p>
+    <p class="container__item" ><b>Nascimento:</b> {{  childDto.birthDate | date:'dd/MM/yyyy hh:mm'}}</p>
+    <p class="container__item"><b>R.A.</b> {{ childDto.registrationNumber }}</p>
+    <p class="container__item"><b>Data de matrícula:</b> {{ childDto.registrationDate | date:'dd/MM/yyyy'}}</p>
+    <p class="container__item"><b>Mapa de Movimento:</b> {{ childDto.movimentMap | movimentMap | titlecase}}</p>
+    <p class="container__item"><b>Restrição Alimentar:</b> {{ childDto.foodRestriction }}</p>
+    <p class="container__item"><b>Dispacho do Uniforme</b> {{ childDto.uniformDispatch}}</p>
+    <p class="container__item"><b>Uniforme Entregue</b> {{ childDto.uniformDelivered  == true ? "Sim":"Não" }}</p>
+    <p class="container__item"><b>Censo</b> {{ childDto.census  == true ? "Sim":"Não" }}</p>
+  </article>
+
+</app-admin-page>

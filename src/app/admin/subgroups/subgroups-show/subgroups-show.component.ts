@@ -41,6 +41,19 @@ export class SubgroupsShowComponent implements OnInit {
           this.dataSource = subgroupDto.children;
           this.loaderService.hide();
         }
-      })
+      }
+    )
+  }
+
+  addNewChild() {
+    this.router.navigate(['admin','children', 'new', this.subgroupId])
+  }
+
+  openChild(childDto: ChildDto) {
+    this.router.navigate(['admin','children', childDto.id]);
+  }
+
+  backLink() {
+      this.router.navigate(['admin','rooms']);
   }
 }

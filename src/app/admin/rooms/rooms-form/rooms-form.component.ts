@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {RoomCreateDto} from "../../../core/models/room.model";
 import {Router} from "@angular/router";
 import {RoomService} from "../../../core/services/room.service";
-import {first} from "rxjs";
 import {NotificationService} from "../../../core/services/notification.service";
 
 @Component({

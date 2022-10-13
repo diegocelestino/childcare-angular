@@ -4,7 +4,7 @@ export interface ChildDto {
   birthDate: Date,
   registrationNumber: string,
   registrationDate: Date,
-  movimentMap: string,
+  movimentMap: MovimentMap,
   foodRestriction: string,
   uniformDispatch: string,
   uniformDelivered: boolean,
@@ -16,20 +16,39 @@ export class ChildCreateDto {
   birthDate: Date;
   registrationNumber: string;
   registrationDate: Date;
-  movimentMap: string;
+  movimentMap: MovimentMap;
+  subgroupId: string;
 
   constructor(
     name: string,
     birthDate: Date,
     registrationNumber: string,
     registrationDate: Date,
-    movimentMap: string,
+    movimentMap: MovimentMap,
+    subgroupId: string,
   ) {
     this.name = name;
     this.birthDate = birthDate;
     this.registrationNumber = registrationNumber;
     this.registrationDate = registrationDate;
     this.movimentMap = movimentMap;
+    this.subgroupId = subgroupId;
   }
+}
+
+export enum MovimentMap {
+  JANUARY = ("Janeiro"),
+  FEBRUARY = ("Fevereiro"),
+  MARCH = ("Março"),
+  APRIL = ("Abril"),
+  MAY = ("Maio"),
+  JUNE = ("Junho"),
+  JULY = ("Julho"),
+  AUGUST = ("Agosto"),
+  SEPTEMBER = ("Setembro"),
+  OCTOBER = ("Outubro"),
+  NOVEMBER = ("Novembro"),
+  DECEMBER = ("Dezembro"),
+  NONE = ("Não se aplica"),
 }
 

@@ -8,6 +8,7 @@ import {CoreModule} from "../../core/core.module";
 import {SharedModule} from "../../shared/shared.module";
 import {MatSelectModule} from "@angular/material/select";
 import { SubgroupsShowComponent } from './subgroups-show/subgroups-show.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SubgroupsShowComponent } from './subgroups-show/subgroups-show.componen
     ReactiveFormsModule,
     CoreModule,
     SharedModule,
-    MatSelectModule
+    MatMenuModule,
+
   ]
 })
 export class SubgroupsModule { }
