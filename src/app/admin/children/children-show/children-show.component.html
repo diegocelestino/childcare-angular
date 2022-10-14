@@ -1,30 +1,101 @@
-<app-admin-page>
+<div *ngIf="childDto">
 
+<app-admin-page pageTitle="{{ childDto.name }}">
   <div class="link1">
     <button mat-menu-item (click)="backLink()">
       <mat-icon>arrow_back</mat-icon>
-      <span>Voltar</span>
+      <span>Subgrupo</span>
     </button>
   </div>
 
   <div class="link2">
     <button mat-menu-item (click)="updateChild(childId)">
+      <div class="link2-right">
+      <span>Editar </span>
       <mat-icon>edit_square</mat-icon>
-      <span>Editar</span>
+      </div>
     </button>
   </div>
 
-    <article *ngIf="childDto">
-    <h3>Dados</h3>
-    <p class="childDisplay"><b>Nome: </b> {{ childDto.name }}</p>
-    <p class="childDisplay" ><b>Nascimento: </b> {{  childDto.birthDate | date:'dd/MM/yyyy hh:mm'}}</p>
-    <p class="childDisplay"><b>R.A. </b> {{ childDto.registrationNumber }}</p>
-    <p class="childDisplay"><b>Data de matrícula: </b> {{ childDto.registrationDate | date:'dd/MM/yyyy'}}</p>
-    <p class="childDisplay"><b>Mapa de Movimento: </b> {{ childDto.movimentMap | movimentMap | titlecase}}</p>
-    <p class="childDisplay"><b>Restrição Alimentar: </b> {{ childDto.foodRestriction }}</p>
-    <p class="childDisplay"><b>Dispacho do Uniforme: </b> {{ childDto.uniformDispatch}}</p>
-    <p class="childDisplay"><b>Uniforme Entregue: </b> {{ childDto.uniformDelivered  == true ? "Sim":"Não" }}</p>
-    <p class="childDisplay"><b>Censo: </b> {{ childDto.census  == true ? "Sim":"Não" }}</p>
-  </article>
+    <article >
+    <table>
+      <mat-card class="childDisplay">
+      <ng-container matColumnDef="birthDate">
+        <mat-card-title>
+        <th mat-header-cell>Data de Nascimento</th>
+        </mat-card-title>
+        <mat-card-content>
+        <td mat-cell>{{ childDto.birthDate | date:'dd/MM/yyyy' }}</td>
+        </mat-card-content>
+      </ng-container>
+      </mat-card>
 
+      <mat-card class="childDisplay">
+        <ng-container matColumnDef="registrationNumber">
+          <mat-card-title>
+            <th mat-header-cell>R.A.</th>
+          </mat-card-title>
+          <mat-card-content>
+            <td mat-cell>{{ childDto.registrationNumber }}</td>
+          </mat-card-content>
+        </ng-container>
+      </mat-card>
+
+      <mat-card class="childDisplay">
+        <ng-container matColumnDef="registrationDate">
+          <mat-card-title>
+            <th mat-header-cell>Data de Matrícula</th>
+          </mat-card-title>
+          <mat-card-content>
+            <td mat-cell>{{ childDto.registrationDate | date:'dd/MM/yyyy' }}</td>
+          </mat-card-content>
+        </ng-container>
+      </mat-card>
+
+      <mat-card class="childDisplay">
+        <ng-container matColumnDef="movimentMap">
+          <mat-card-title>
+            <th mat-header-cell>Mapa de Movimento</th>
+          </mat-card-title>
+          <mat-card-content>
+            <td mat-cell>{{ childDto.movimentMap | movimentMap | titlecase }}</td>
+          </mat-card-content>
+        </ng-container>
+      </mat-card>
+
+      <mat-card class="childDisplay">
+        <ng-container matColumnDef="uniformDispatch">
+          <mat-card-title>
+            <th mat-header-cell>Despacho do Uniforme</th>
+          </mat-card-title>
+          <mat-card-content>
+            <td mat-cell>{{ childDto.uniformDispatch }}</td>
+          </mat-card-content>
+        </ng-container>
+      </mat-card>
+
+      <mat-card class="childDisplay">
+        <ng-container matColumnDef="uniformDelivered">
+          <mat-card-title>
+            <th mat-header-cell>Uniforme Entregue</th>
+          </mat-card-title>
+          <mat-card-content>
+            <td mat-cell>{{ childDto.uniformDelivered  == true ? "Sim":"Não" }}</td>
+          </mat-card-content>
+        </ng-container>
+      </mat-card>
+
+      <mat-card class="childDisplay">
+        <ng-container matColumnDef="census">
+          <mat-card-title>
+            <th mat-header-cell>Censo</th>
+          </mat-card-title>
+          <mat-card-content>
+            <td mat-cell>{{ childDto.census  == true ? "Sim":"Não" }}</td>
+          </mat-card-content>
+        </ng-container>
+      </mat-card>
+    </table>
+  </article>
 </app-admin-page>
+</div>

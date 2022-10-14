@@ -4,7 +4,6 @@ import {first} from "rxjs";
 import {SubgroupDto} from "../../../core/models/subgroups.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoaderService} from "../../../core/services/loader.service";
-import {ChildDto} from "../../../core/models/child.model";
 import {TeacherDto} from "../../../core/models/teacher.model";
 
 @Component({

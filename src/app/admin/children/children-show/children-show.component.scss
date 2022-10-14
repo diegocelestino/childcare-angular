@@ -6,17 +6,18 @@
 
 .link2 {
   display: block;
-  text-align: right;
-  align-content: end;
   width:50%;
   float: right;
 }
 
+.link2-right{
+  text-align: right;
+}
+
 .childDisplay {
   display: inline-block;
-  margin-right: 20px;
-  width: 40%;
-  border-style: unset;
+  //margin-right: 20px;
+  width: 25%;
 }
 
 
