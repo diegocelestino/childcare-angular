@@ -7,6 +7,7 @@ import {CoreModule} from "../core/core.module";
 import {RoomsModule} from "./rooms/rooms.module";
 import { SubgroupsComponent } from './subgroups/subgroups.component';
 import { ChildrenComponent } from './children/children.component';
+import {ChildrenModule} from "./children/children.module";
 
 
 
@@ -20,11 +21,12 @@ import { ChildrenComponent } from './children/children.component';
         AdminComponent
     ],
 
-  imports: [
-    CommonModule,
-    CoreModule,
-    AdminRoutingModule,
-    RoomsModule,
-  ]
+    imports: [
+        CommonModule,
+        CoreModule,
+        AdminRoutingModule,
+        RoomsModule,
+        ChildrenModule,
+    ]
 })
 export class AdminModule { }

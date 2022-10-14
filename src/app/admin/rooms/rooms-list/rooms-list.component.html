@@ -7,7 +7,6 @@
 
     <mat-tab-group mat-stretch-tabs class="mat-tab-group">
       <mat-tab  *ngFor="let element of roomsDto" label="{{ element.number }}">
-
         <mat-card class="subgroup-item" *ngFor="let subgroup of element.subgroups">
           <mat-card-title class="subgroup-item-title" (click)="openSubgroup(subgroup.id)">
             {{ subgroup.cycle | cycle | titlecase}} {{  subgroup.period | period | titlecase }}

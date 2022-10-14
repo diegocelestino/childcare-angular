@@ -13,18 +13,21 @@ import {MatInput, MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
-  declarations: [
-    ChildrenFormComponent,
-    ChildrenShowComponent,
-    ChildrenUpdateFormComponent
-  ],
-  imports: [
-    CommonModule,
-    ChildrenRoutingModule,
-    SharedModule,
-    CoreModule,
-    MatMenuModule,
+    declarations: [
+        ChildrenFormComponent,
+        ChildrenShowComponent,
+        ChildrenUpdateFormComponent
+    ],
+    exports: [
+        ChildrenFormComponent
+    ],
+    imports: [
+        CommonModule,
+        ChildrenRoutingModule,
+        SharedModule,
+        CoreModule,
+        MatMenuModule,
 
-  ]
+    ]
 })
 export class ChildrenModule { }
