@@ -9,6 +9,7 @@ import {SharedModule} from "../../shared/shared.module";
 import {MatSelectModule} from "@angular/material/select";
 import { SubgroupsShowComponent } from './subgroups-show/subgroups-show.component';
 import {MatMenuModule} from "@angular/material/menu";
+import {ChildrenModule} from "../children/children.module";
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {MatMenuModule} from "@angular/material/menu";
     CoreModule,
     SharedModule,
     MatMenuModule,
+    ChildrenModule,
 
   ]
 })

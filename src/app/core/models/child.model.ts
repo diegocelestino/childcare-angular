@@ -1,3 +1,5 @@
+import {SubgroupBasicDto} from "./subgroups.model";
+
 export interface ChildDto {
   id: string,
   name: string,
@@ -9,6 +11,7 @@ export interface ChildDto {
   uniformDispatch: string,
   uniformDelivered: boolean,
   census: boolean,
+  subgroup: SubgroupBasicDto;
 }
 
 export class ChildCreateDto {

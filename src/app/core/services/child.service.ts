@@ -11,6 +11,7 @@ import {ChildCreateDto, ChildDto} from "../models/child.model";
 })
 export class ChildService extends BaseService{
   apiUrl = `${environment.apiUrl}/child`;
+  bySubgroup = '?subgroupId='
 
   constructor(private httpClient: HttpClient) {
     super();
@@ -26,5 +27,9 @@ export class ChildService extends BaseService{
 
   putAccount(childDto: ChildDto): Observable<ChildDto> {
     return  this.httpClient.put<ChildDto>(this.apiUrl, childDto, this.httpOptions);
+  }
+
+  getChildrenById(subgroupId: string): Observable<ChildDto[]> {
+    return this.httpClient.get<ChildDto[]>(this.apiUrl + this.bySubgroup + subgroupId, this.httpOptions )
   }
 }

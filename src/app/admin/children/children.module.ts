@@ -10,16 +10,19 @@ import {MatMenuModule} from "@angular/material/menu";
 import { ChildrenUpdateFormComponent } from './children-update-form/children-update-form.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatInput, MatInputModule} from "@angular/material/input";
+import { ChildrenListComponent } from './children-list/children-list.component';
 
 
 @NgModule({
     declarations: [
         ChildrenFormComponent,
         ChildrenShowComponent,
-        ChildrenUpdateFormComponent
+        ChildrenUpdateFormComponent,
+        ChildrenListComponent
     ],
     exports: [
-        ChildrenFormComponent
+        ChildrenFormComponent,
+        ChildrenListComponent
     ],
     imports: [
         CommonModule,

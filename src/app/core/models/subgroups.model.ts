@@ -1,12 +1,13 @@
 import {ChildDto} from "./child.model";
 import {RoomBasicDto, RoomDto} from "./room.model";
+import {TeacherDto} from "./teacher.model";
 
 export interface SubgroupDto {
   id: string;
   cycle: Cycle;
   period: Period;
   capacity: number;
-  teachers: string[];
+  teachers: TeacherDto[];
   children: ChildDto[];
   room: RoomBasicDto;
 }

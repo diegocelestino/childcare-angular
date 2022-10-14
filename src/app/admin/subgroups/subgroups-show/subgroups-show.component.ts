@@ -5,6 +5,7 @@ import {SubgroupDto} from "../../../core/models/subgroups.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoaderService} from "../../../core/services/loader.service";
 import {ChildDto} from "../../../core/models/child.model";
+import {TeacherDto} from "../../../core/models/teacher.model";
 
 @Component({
   selector: 'app-subgroups-show',
@@ -12,11 +13,10 @@ import {ChildDto} from "../../../core/models/child.model";
   styleUrls: ['./subgroups-show.component.scss']
 })
 export class SubgroupsShowComponent implements OnInit {
-
   subgroupDto: SubgroupDto | undefined;
-  dataSource: ChildDto[] = [];
+  teachersDto: TeacherDto[] = []
   subgroupId: string;
-  displayedColumns = ['name', 'birthDate', 'registrationNumber', 'registrationDate'];
+  displayedTeachersColumns = ['name'];
 
   constructor(
     private subgroupService: SubgroupService,
@@ -38,7 +38,7 @@ export class SubgroupsShowComponent implements OnInit {
       .subscribe({
         next: subgroupDto => {
           this.subgroupDto = subgroupDto;
-          this.dataSource = subgroupDto.children;
+          this.teachersDto = subgroupDto.teachers;
           this.loaderService.hide();
         }
       }
@@ -49,9 +49,6 @@ export class SubgroupsShowComponent implements OnInit {
     this.router.navigate(['admin','children', 'new', this.subgroupId])
   }
 
-  openChild(childDto: ChildDto) {
-    this.router.navigate(['admin','children', childDto.id]);
-  }
 
   backLink() {
     this.router.navigate(['admin','rooms', this.subgroupDto?.room.id]);
