@@ -8,6 +8,11 @@ export interface RoomDto {
   subgroups: SubgroupDto[]
 }
 
+export interface RoomBasicDto {
+  id: string;
+  number: number;
+}
+
 export class RoomCreateDto {
   number: number;
   name: string;

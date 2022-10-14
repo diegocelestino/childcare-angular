@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./rooms-list.component.scss']
 })
 export class RoomsListComponent implements OnInit {
-  displayedColumns: string[] = ['number', 'name', 'sedName'];
+
   roomsDto: RoomDto[] = [];
 
   constructor(
@@ -35,7 +35,7 @@ export class RoomsListComponent implements OnInit {
     )
   }
 
-  openSubgroup(id: string){
-    this.router.navigate(['admin', 'subgroups', id]);
+  openRoom(roomId: string){
+    this.router.navigate(['admin', 'rooms', roomId]);
   }
 }

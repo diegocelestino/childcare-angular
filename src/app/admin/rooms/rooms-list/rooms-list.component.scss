@@ -1,22 +1,9 @@
-.mat-tab-group {
-  margin-bottom: 48px;
-  max-width: 100%;
-  flex: 1;
+.room-card-title {
+  line-height: normal;
+  width: 100%;
+  cursor: pointer;
 }
 
-.item-tab-list {
-    margin-bottom: 48px;
-    width: 50%;
-    height: 2px;
-}
-
-.tab-list{
-  display: inline-block;
-  width: 20%;
-  vertical-align: top;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
 .tab_container {
   position: center;
@@ -28,16 +15,3 @@
   z-index: 500;
 }
 
-.subgroup-item {
-  margin-top: 20px;
-  cursor: pointer;
-  line-height: 50px;
-  display: inline-block;
-  width: 33%;
-}
-
-.number {
-  display: inline-block;
-  width: 50px;
-  height: 2px;
-}

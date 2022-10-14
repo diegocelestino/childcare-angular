@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RoomsComponent } from "./rooms.component";
 import {RoomsFormComponent} from "./rooms-form/rooms-form.component";
 import {RoomsListComponent} from "./rooms-list/rooms-list.component";
+import {RoomsShowComponent} from "./rooms-show/rooms-show.component";
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
       {
         path: 'new',
         component: RoomsFormComponent,
+      },
+      {
+        path: ':roomId',
+        component: RoomsShowComponent,
       }
     ]
   }

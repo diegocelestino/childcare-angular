@@ -30,7 +30,6 @@ export class SubgroupsShowComponent implements OnInit {
   ngOnInit(): void {
     this.loaderService.show()
     this.getSubgroup(this.subgroupId);
-    localStorage.setItem("lastSubgroupOpened", this.subgroupId);
   }
 
   private getSubgroup(subgroupId: string) {
@@ -55,6 +54,7 @@ export class SubgroupsShowComponent implements OnInit {
   }
 
   backLink() {
-      this.router.navigate(['admin','rooms']);
+    this.router.navigate(['admin','rooms', this.subgroupDto?.room.id]);
+
   }
 }

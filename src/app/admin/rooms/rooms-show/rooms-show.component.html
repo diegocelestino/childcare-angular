@@ -1,0 +1,45 @@
+<div *ngIf="roomDto">
+
+  <app-admin-page pageTitle="Sala {{ roomDto.number }}">
+
+    <div class="link1">
+      <button mat-menu-item (click)="backLink()">
+        <mat-icon>arrow_back</mat-icon>
+        <span>Voltar</span>
+      </button>
+    </div>
+
+    <article>
+      <table class="subgroup-list">
+        <ng-container matColumnDef="number">
+          <th mat-header-cell>Número</th>
+          <td mat-cell>{{ roomDto.number }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell>Nome estado</th>
+          <td mat-cell>{{ roomDto.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="sedName">
+          <th mat-header-cell>Sed</th>
+          <td mat-cell>{{ roomDto.sedName }}</td>
+        </ng-container>
+      </table>
+
+      <br>
+
+      <mat-grid-list cols="3" rowHeight="3:1">
+        <mat-grid-tile *ngFor="let subgroup of subgroups">
+          <mat-card class="room-card-title" (click)="openSubgroup(subgroup.id)">
+            <mat-card-title>
+              {{  subgroup.period | period  }}
+            </mat-card-title>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </article>
+  </app-admin-page>
+</div>
+

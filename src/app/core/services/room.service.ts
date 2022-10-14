@@ -25,4 +25,8 @@ export class RoomService extends BaseService{
         map(results => results.sort((a, b) => a.name.localeCompare(b.name)))
       );
   }
+
+  getRoomById(roomId: string): Observable<RoomDto> {
+    return this.httpClient.get<RoomDto>(this.apiUrl + "/" + roomId, this.httpOptions);
+  }
 }
