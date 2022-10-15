@@ -1,0 +1,31 @@
+<app-admin-page pageTitle="Adicionar Observação">
+
+<div class="container__table">
+  <button mat-menu-item (click)="backLink()">
+    <mat-icon>arrow_back</mat-icon>
+    <span>Voltar</span>
+  </button>
+</div>
+
+<form id="observation-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Tipo</mat-label>
+    <mat-select formControlName="observationType" name="observationType" placeholder="Tipo">
+      <mat-option *ngFor="let type of observationTypeKeys" [value]="type">
+        {{type | observationType | titlecase}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Descrição</mat-label>
+    <input matInput formControlName="description" name="description">
+  </mat-form-field>
+
+  <mat-card-actions>
+    <button class="button button-red" type="reset" mat-button form="observation-form" color="secondary" (click)="backLink()">Cancelar</button>
+    <button class="button button-white" type="submit" mat-raised-button form="observation-form" color="primary">Cadastrar</button>
+  </mat-card-actions>
+</form>
+</app-admin-page>

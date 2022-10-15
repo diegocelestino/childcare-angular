@@ -14,6 +14,11 @@ export interface ChildDto {
   subgroup: SubgroupBasicDto;
 }
 
+export interface ChildBasicDto {
+  id: string,
+  name: string,
+}
+
 export class ChildCreateDto {
   name: string;
   birthDate: Date;

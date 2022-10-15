@@ -9,6 +9,7 @@ import { PeriodPipe } from './pipes/period.pipe';
 import { CyclePipe } from './pipes/cycle.pipe';
 import {MatMenuModule} from "@angular/material/menu";
 import { MovimentMapPipe } from './pipes/moviment-map.pipe';
+import { ObservationTypePipe } from './pipes/observation-type.pipe';
 
 @NgModule({
   declarations: [
@@ -16,16 +17,18 @@ import { MovimentMapPipe } from './pipes/moviment-map.pipe';
     AdminPageComponent,
     PeriodPipe,
     CyclePipe,
-    MovimentMapPipe
+    MovimentMapPipe,
+    ObservationTypePipe
   ],
 
-  exports: [
-    AdminHeaderComponent,
-    AdminPageComponent,
-    PeriodPipe,
-    CyclePipe,
-    MovimentMapPipe
-  ],
+    exports: [
+        AdminHeaderComponent,
+        AdminPageComponent,
+        PeriodPipe,
+        CyclePipe,
+        MovimentMapPipe,
+        ObservationTypePipe
+    ],
 
   imports: [
     CommonModule,

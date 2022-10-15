@@ -11,6 +11,7 @@ import { ChildrenUpdateFormComponent } from './children-update-form/children-upd
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import { ChildrenListComponent } from './children-list/children-list.component';
+import {ObservationsModule} from "../observations/observations.module";
 
 
 @NgModule({
@@ -18,19 +19,20 @@ import { ChildrenListComponent } from './children-list/children-list.component';
         ChildrenFormComponent,
         ChildrenShowComponent,
         ChildrenUpdateFormComponent,
-        ChildrenListComponent
+        ChildrenListComponent,
     ],
     exports: [
         ChildrenFormComponent,
         ChildrenListComponent
     ],
-    imports: [
-        CommonModule,
-        ChildrenRoutingModule,
-        SharedModule,
-        CoreModule,
-        MatMenuModule,
+  imports: [
+    CommonModule,
+    ChildrenRoutingModule,
+    SharedModule,
+    CoreModule,
+    MatMenuModule,
+    ObservationsModule,
 
-    ]
+  ]
 })
 export class ChildrenModule { }

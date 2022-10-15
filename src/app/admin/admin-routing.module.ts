@@ -22,6 +22,11 @@ const routes: Routes = [
         loadChildren: () => import('./children/children.module').then(m => m.ChildrenModule),
         title: 'Criança'
       },
+      {
+        path: 'observations',
+        loadChildren: () => import('./observations/observations.module').then(m => m.ObservationsModule),
+        title: 'Observações'
+      },
     ]
   }
 ];

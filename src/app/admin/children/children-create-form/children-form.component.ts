@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {NotificationService} from "../../../core/services/notification.service";
 import {ChildService} from "../../../core/services/child.service";
 import {ChildCreateDto, MovimentMap} from "../../../core/models/child.model";
+import {first} from "rxjs";
 
 @Component({
   selector: 'app-children-create-form',
@@ -50,8 +51,8 @@ export class ChildrenFormComponent implements OnInit {
       this.subgroupId,
     );
 
-    this.childService.postChild(childCreateDto).pipe()
-      .subscribe({
+    this.childService.postChild(childCreateDto).pipe
+    (first()).subscribe({
         next: childDto => {
           this.notificationServise.success("Criança cadastrada com sucesso");
           return this.router.navigate(['admin','subgroups', this.subgroupId]);
