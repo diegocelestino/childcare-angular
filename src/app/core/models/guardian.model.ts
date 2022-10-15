@@ -1,20 +1,23 @@
-import {SubgroupDto} from "./subgroups.model";
 
-export interface TeacherDto {
+export interface GuardianDto {
   id: string;
   name: string;
+  cpf: string;
 }
 
-export class TeacherCreateDto {
+export class GuardianCreateDto {
   name: string;
-  subgroupId: string;
+  cpf: string;
+  childId: string;
 
   constructor(
     name: string,
-    subgroupId: string,
+    cpf: string,
+    childId: string,
   ) {
     this.name = name;
-    this.subgroupId = subgroupId;
+    this.cpf = cpf;
+    this.childId = childId;
   }
 }
 

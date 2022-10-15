@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ObservationFormComponent} from "./observation-form/observation-form.component";
+import {GuardianFormComponent} from "./guardian-form/guardian-form.component";
 
 const routes: Routes = [
   {
     path: ':childId',
-    component: ObservationFormComponent,
+    component: GuardianFormComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ObservationsRoutingModule { }
+export class GuardiansRoutingModule { }
