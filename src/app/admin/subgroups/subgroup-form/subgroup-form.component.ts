@@ -4,7 +4,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {NotificationService} from "../../../core/services/notification.service";
 import {SubgroupService} from "../../../core/services/subgroup.service";
 import {Cycle, Period, SubgroupCreateDto} from "../../../core/models/subgroups.model";
-import {RoomListDto} from "../../../core/models/room.model";
 
 @Component({
   selector: 'app-subgroup-form',
@@ -33,9 +32,7 @@ export class SubgroupFormComponent implements OnInit {
     this.roomId = this.route.snapshot.paramMap.get('roomId')!;
   }
 
-  ngOnInit(): void {
-    console.log(this.roomId);
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
     this.submitted = true;

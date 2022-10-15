@@ -19,3 +19,19 @@
   display: inline-block;
   width: 33%;
 }
+
+.link1 {
+  display: inline-block;
+  text-align: left;
+  width:50%;
+}
+
+.link2 {
+  display: block;
+  width:50%;
+  float: right;
+}
+
+.link2-right{
+  text-align: right;
+}

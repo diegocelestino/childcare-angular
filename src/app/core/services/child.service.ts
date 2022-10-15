@@ -32,4 +32,8 @@ export class ChildService extends BaseService{
   getChildrenById(subgroupId: string): Observable<ChildDto[]> {
     return this.httpClient.get<ChildDto[]>(this.apiUrl + this.bySubgroup + subgroupId, this.httpOptions )
   }
+
+  deleteChild(childId: string): Observable<unknown> {
+    return this.httpClient.delete<unknown>(this.apiUrl + "/" + childId, this.httpOptions);
+  }
 }

@@ -85,6 +85,18 @@ export class ChildUpdateFormComponent implements OnInit {
       });
   }
 
+  deleteChild() {
+    this.childService.deleteChild(this.childId)
+      .pipe(first())
+      .subscribe({
+          next: ()=> {
+            this.notificationService.success("Criança excluída com sucesso");
+            this.router.navigate(['admin', 'subgroups', this.childDto!.subgroup.id])
+          },
+        }
+      )
+  }
+
   backLink() {
     this.router.navigate(['admin', 'children', this.childId]);
   }
