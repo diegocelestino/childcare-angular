@@ -43,6 +43,10 @@ export class RoomShowComponent implements OnInit {
       )
   }
 
+  openSubgroupsForm() {
+    return this.router.navigate(['admin', 'subgroups', 'new', this.roomId]);
+  }
+
   backLink() {
     return this.router.navigate(['admin', 'rooms']);
   }

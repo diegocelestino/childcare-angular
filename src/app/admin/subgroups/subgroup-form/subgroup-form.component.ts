@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {NotificationService} from "../../../core/services/notification.service";
 import {SubgroupService} from "../../../core/services/subgroup.service";
 import {Cycle, Period, SubgroupCreateDto} from "../../../core/models/subgroups.model";
@@ -15,24 +15,26 @@ export class SubgroupFormComponent implements OnInit {
   form: FormGroup;
   periodClass = Period;
   cycleClass = Cycle;
-  rooms: RoomListDto[] = [];
   periodKeys: any = [];
   cycleKeys: any = [];
   submitted: boolean = false;
+  roomId: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    private route: ActivatedRoute,
     private subgroupService: SubgroupService,
     private notificationServise: NotificationService,
   ) {
     this.periodKeys = Object.keys(this.periodClass);
     this.cycleKeys = Object.keys(this.cycleClass);
     this.form = this.buildForm();
-    this.rooms = this.getRoomsFromLocalStorage();
+    this.roomId = this.route.snapshot.paramMap.get('roomId')!;
   }
 
   ngOnInit(): void {
+    console.log(this.roomId);
   }
 
   onSubmit() {
@@ -49,14 +51,14 @@ export class SubgroupFormComponent implements OnInit {
       this.form.value['cycle'],
       this.form.value['period'],
       this.form.value['capacity'],
-      this.form.value['roomId'],
+      this.roomId,
     );
 
     this.subgroupService.postSubgroup(subgroupCreateDto).pipe()
       .subscribe({
         next: roomDto => {
           this.notificationServise.success("Sala cadastrada com sucesso");
-          return this.router.navigate(['admin','rooms']);
+          return this.router.navigate(['admin','rooms',this.roomId]);
         },
         error: error =>
           console.log(error)
@@ -64,25 +66,11 @@ export class SubgroupFormComponent implements OnInit {
 
   }
 
-  getRoomsFromLocalStorage(): RoomListDto[]{
-    let rooms: RoomListDto[] = [];
-    for (let item in localStorage){
-      if (item.toString().startsWith("room")){
-        rooms.push(new RoomListDto(
-          localStorage.getItem(item)!.toString().split("ROOM")[0],
-          parseInt(localStorage.getItem(item)!.toString().split("ROOM")[1]))
-        );
-      }
-    }
-    return rooms.sort((a, b) => a.number - b.number);
-  }
-
   private buildForm() {
     return this.formBuilder.group({
       cycle: [''],
       period: [''],
       capacity: [''],
-      roomId: [''],
     });
   }
 
@@ -92,6 +80,10 @@ export class SubgroupFormComponent implements OnInit {
 
   fieldErrors(path: string) {
     return this.field(path)?.errors;
+  }
+
+  backLink() {
+    this.router.navigate(['admin', 'rooms', this.roomId]);
   }
 
 }

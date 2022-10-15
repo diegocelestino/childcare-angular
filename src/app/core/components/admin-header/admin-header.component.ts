@@ -22,7 +22,5 @@ export class AdminHeaderComponent implements OnInit {
     return this.router.navigate(['admin', 'rooms']);
   }
 
-  openSubgroupsForm() {
-    return this.router.navigate(['admin', 'subgroups', 'new']);
-  }
+
 }

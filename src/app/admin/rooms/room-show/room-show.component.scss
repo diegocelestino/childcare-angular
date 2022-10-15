@@ -4,5 +4,19 @@
 
 .room-card-title {
   cursor: pointer;
+}
 
+.link1 {
+  display: inline-block;
+  text-align: left;
+  width:50%;
+}
+.link2 {
+  display: inline-block;
+  float: right;
+  width:50%;
+}
+
+.link2-right {
+  text-align: right;
 }

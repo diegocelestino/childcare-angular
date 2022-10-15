@@ -9,6 +9,30 @@
       </button>
     </div>
 
+    <div class="link2">
+      <button mat-menu-item [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <div class="link2-right">
+        <span>Opções</span>
+        <mat-icon>settings</mat-icon>
+        </div>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="openSubgroupsForm()">
+          <mat-icon>add_circle</mat-icon>
+          <span>Adicionar novo Subgrupo</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+    </div>
+
     <article>
       <table class="subgroup-list">
         <ng-container matColumnDef="number">
@@ -26,19 +50,7 @@
           <td mat-cell>{{ roomDto.sedName }}</td>
         </ng-container>
       </table>
-
-      <br>
-
       <app-subgroups-list></app-subgroups-list>
-<!--      <mat-grid-list cols="3" rowHeight="3:1">-->
-<!--        <mat-grid-tile *ngFor="let subgroup of subgroups">-->
-<!--          <mat-card class="room-card-title" (click)="openSubgroup(subgroup.id)">-->
-<!--            <mat-card-title>-->
-<!--              {{  subgroup.period | period  }}-->
-<!--            </mat-card-title>-->
-<!--          </mat-card>-->
-<!--        </mat-grid-tile>-->
-<!--      </mat-grid-list>-->
 
     </article>
   </app-admin-page>
