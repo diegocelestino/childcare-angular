@@ -8,6 +8,7 @@ import {RoomsModule} from "./rooms/rooms.module";
 import { SubgroupsComponent } from './subgroups/subgroups.component';
 import { ChildrenComponent } from './children/children.component';
 import {ChildrenModule} from "./children/children.module";
+import { ObservationsComponent } from './observations/observations.component';
 
 
 
@@ -16,6 +17,7 @@ import {ChildrenModule} from "./children/children.module";
         AdminComponent,
         SubgroupsComponent,
         ChildrenComponent,
+        ObservationsComponent,
     ],
     exports: [
         AdminComponent
