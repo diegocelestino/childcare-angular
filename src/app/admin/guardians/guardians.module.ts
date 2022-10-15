@@ -9,15 +9,18 @@ import { GuardiansListComponent } from './guardians-list/guardians-list.componen
 
 
 @NgModule({
-  declarations: [
-    GuardianFormComponent,
-    GuardiansListComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    GuardiansRoutingModule,
-    CoreModule
-  ]
+    declarations: [
+        GuardianFormComponent,
+        GuardiansListComponent
+    ],
+    exports: [
+        GuardiansListComponent
+    ],
+    imports: [
+        CommonModule,
+        SharedModule,
+        GuardiansRoutingModule,
+        CoreModule
+    ]
 })
 export class GuardiansModule { }

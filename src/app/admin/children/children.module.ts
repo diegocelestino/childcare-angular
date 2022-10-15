@@ -8,6 +8,7 @@ import {ChildShowComponent} from './child-show/child-show.component';
 import {ChildUpdateFormComponent} from './child-update-form/child-update-form.component';
 import {ChildrenListComponent} from './children-list/children-list.component';
 import {ObservationsModule} from "../observations/observations.module";
+import {GuardiansModule} from "../guardians/guardians.module";
 
 
 @NgModule({
@@ -21,11 +22,12 @@ import {ObservationsModule} from "../observations/observations.module";
         ChildFormComponent,
         ChildrenListComponent
     ],
-  imports: [
-    ChildrenRoutingModule,
-    CoreModule,
-    SharedModule,
-    ObservationsModule,
-  ]
+    imports: [
+        ChildrenRoutingModule,
+        CoreModule,
+        SharedModule,
+        ObservationsModule,
+        GuardiansModule,
+    ]
 })
 export class ChildrenModule { }

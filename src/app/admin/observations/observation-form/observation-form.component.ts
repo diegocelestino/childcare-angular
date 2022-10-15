@@ -32,6 +32,7 @@ export class ObservationFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.childId);
   }
 
   onSubmit() {
@@ -59,6 +60,7 @@ export class ObservationFormComponent implements OnInit {
         console.log(error)
     });
   }
+
 
   private buildForm() {
     return this.formBuilder.group({

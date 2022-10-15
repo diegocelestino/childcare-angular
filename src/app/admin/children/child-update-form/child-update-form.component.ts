@@ -29,14 +29,14 @@ export class ChildUpdateFormComponent implements OnInit {
     this.form = this.buildForm();
     this.movimentMapKeys = Object.keys(this.movimentMapClass);
     this.childId = this.route.snapshot.paramMap.get('childId')!;
-    this.fetchAccount();
+    this.fetchChild();
   }
 
   ngOnInit() {
 
   }
 
-  fetchAccount() {
+  fetchChild() {
     this.childService.getChildById(this.childId)
       .pipe(first())
       .subscribe(

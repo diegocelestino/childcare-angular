@@ -16,6 +16,15 @@ export class GuardianService extends BaseService{
   }
 
   postGuardian(guardianCreateDto: GuardianCreateDto): Observable<GuardianDto> {
-    return this.httpClient.post<GuardianDto>(this.apiUrl + "/" + guardianCreateDto, this.httpOptions);
+    let childId = guardianCreateDto.childId;
+    return this.httpClient.post<GuardianDto>(this.apiUrl, guardianCreateDto, this.httpOptions);
+  }
+
+  getGuardiansByChildId(childId: string): Observable<GuardianDto[]> {
+    return this.httpClient.get<GuardianDto[]>(this.apiUrl + "/" + childId, this.httpOptions);
+  }
+
+  deleteGuardian(guardianId: string): Observable<unknown> {
+      return this.httpClient.delete<unknown>(this.apiUrl + "/" + guardianId, this.httpOptions);
   }
 }

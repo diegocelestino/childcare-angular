@@ -40,9 +40,9 @@ export class GuardianFormComponent implements OnInit {
 
   private createGuardian(){
     const guardianCreateDto = new GuardianCreateDto(
-      this.childId,
       this.form.value['name'],
-      this.form.value['cpf']
+      this.form.value['cpf'],
+      this.childId
     )
 
     this.guardianService.postGuardian(guardianCreateDto).pipe

@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {ObservationDto} from "../../../core/models/observation.model";
 
 import {ActivatedRoute, Router} from "@angular/router";
-import {LoaderService} from "../../../core/services/loader.service";
 import {first} from "rxjs";
 import {ObservationService} from "../../../core/services/observation.service";
 import {NotificationService} from "../../../core/services/notification.service";
@@ -54,7 +53,6 @@ export class ObservationsListComponent implements OnInit {
         }
       )
   }
-
 
   newObservation(childId: string) {
     this.router.navigate(['admin', 'observations', childId]);
