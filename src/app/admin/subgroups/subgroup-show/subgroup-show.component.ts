@@ -7,11 +7,11 @@ import {LoaderService} from "../../../core/services/loader.service";
 import {TeacherDto} from "../../../core/models/teacher.model";
 
 @Component({
-  selector: 'app-subgroups-show',
-  templateUrl: './subgroups-show.component.html',
-  styleUrls: ['./subgroups-show.component.scss']
+  selector: 'app-subgroup-show',
+  templateUrl: './subgroup-show.component.html',
+  styleUrls: ['./subgroup-show.component.scss']
 })
-export class SubgroupsShowComponent implements OnInit {
+export class SubgroupShowComponent implements OnInit {
   subgroupDto: SubgroupDto | undefined;
   teachersDto: TeacherDto[] = []
   subgroupId: string;

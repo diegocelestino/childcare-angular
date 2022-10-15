@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RoomsShowComponent } from './rooms-show.component';
+import { SubgroupFormComponent } from './subgroup-form.component';
 
-describe('RoomsShowComponent', () => {
-  let component: RoomsShowComponent;
-  let fixture: ComponentFixture<RoomsShowComponent>;
+describe('SubgroupsFormComponent', () => {
+  let component: SubgroupFormComponent;
+  let fixture: ComponentFixture<SubgroupFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RoomsShowComponent ]
+      declarations: [ SubgroupFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RoomsShowComponent);
+    fixture = TestBed.createComponent(SubgroupFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

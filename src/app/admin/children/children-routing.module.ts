@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ChildrenFormComponent} from "./children-create-form/children-form.component";
-import {ChildrenShowComponent} from "./children-show/children-show.component";
-import {ChildrenUpdateFormComponent} from "./children-update-form/children-update-form.component";
+import {ChildFormComponent} from "./child-create-form/child-form.component";
+import {ChildShowComponent} from "./child-show/child-show.component";
+import {ChildUpdateFormComponent} from "./child-update-form/child-update-form.component";
 
 const routes: Routes = [
   {
     path: 'new/:subgroupId',
-    component: ChildrenFormComponent,
+    component: ChildFormComponent,
   },
   {
     path: ':childId',
-    component: ChildrenShowComponent,
+    component: ChildShowComponent,
   },
   {
     path: 'edit/:childId',
-    component: ChildrenUpdateFormComponent,
+    component: ChildUpdateFormComponent,
   }
 ];
 

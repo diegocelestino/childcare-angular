@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChildrenUpdateFormComponent } from './children-update-form.component';
+import { ChildUpdateFormComponent } from './child-update-form.component';
 
 describe('ChildrenUpdateFormComponent', () => {
-  let component: ChildrenUpdateFormComponent;
-  let fixture: ComponentFixture<ChildrenUpdateFormComponent>;
+  let component: ChildUpdateFormComponent;
+  let fixture: ComponentFixture<ChildUpdateFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChildrenUpdateFormComponent ]
+      declarations: [ ChildUpdateFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChildrenUpdateFormComponent);
+    fixture = TestBed.createComponent(ChildUpdateFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RoomsComponent } from "./rooms.component";
-import {RoomsFormComponent} from "./rooms-form/rooms-form.component";
+import {RoomFormComponent} from "./room-form/room-form.component";
 import {RoomsListComponent} from "./rooms-list/rooms-list.component";
-import {RoomsShowComponent} from "./rooms-show/rooms-show.component";
+import {RoomShowComponent} from "./room-show/room-show.component";
 
 
 const routes: Routes = [
@@ -17,11 +17,11 @@ const routes: Routes = [
       },
       {
         path: 'new',
-        component: RoomsFormComponent,
+        component: RoomFormComponent,
       },
       {
         path: ':roomId',
-        component: RoomsShowComponent,
+        component: RoomShowComponent,
       }
     ]
   }

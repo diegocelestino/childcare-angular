@@ -4,13 +4,13 @@ import { RoomsRoutingModule } from './rooms-routing.module';
 import { RoomsComponent } from "./rooms.component";
 import { CoreModule } from "../../core/core.module";
 import { RoomsListComponent } from './rooms-list/rooms-list.component';
-import { RoomsFormComponent } from './rooms-form/rooms-form.component';
+import { RoomFormComponent } from './room-form/room-form.component';
 import {SharedModule} from "../../shared/shared.module";
 import {MatListModule} from "@angular/material/list";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatDialogModule} from "@angular/material/dialog";
-import { RoomsShowComponent } from './rooms-show/rooms-show.component';
+import { RoomShowComponent } from './room-show/room-show.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {SubgroupsModule} from "../subgroups/subgroups.module";
 
@@ -19,8 +19,8 @@ import {SubgroupsModule} from "../subgroups/subgroups.module";
     declarations: [
         RoomsComponent,
         RoomsListComponent,
-        RoomsFormComponent,
-        RoomsShowComponent,
+        RoomFormComponent,
+        RoomShowComponent,
     ],
     exports: [
         RoomsListComponent

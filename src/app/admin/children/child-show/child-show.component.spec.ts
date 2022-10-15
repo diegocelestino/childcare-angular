@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChildrenShowComponent } from './children-show.component';
+import { ChildShowComponent } from './child-show.component';
 
 describe('ChildrenShowComponent', () => {
-  let component: ChildrenShowComponent;
-  let fixture: ComponentFixture<ChildrenShowComponent>;
+  let component: ChildShowComponent;
+  let fixture: ComponentFixture<ChildShowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChildrenShowComponent ]
+      declarations: [ ChildShowComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChildrenShowComponent);
+    fixture = TestBed.createComponent(ChildShowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

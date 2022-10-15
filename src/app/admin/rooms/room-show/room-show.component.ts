@@ -7,11 +7,11 @@ import {RoomService} from "../../../core/services/room.service";
 import {SubgroupBasicDto, SubgroupDto} from "../../../core/models/subgroups.model";
 
 @Component({
-  selector: 'app-rooms-show',
-  templateUrl: './rooms-show.component.html',
-  styleUrls: ['./rooms-show.component.scss']
+  selector: 'app-room-show',
+  templateUrl: './room-show.component.html',
+  styleUrls: ['./room-show.component.scss']
 })
-export class RoomsShowComponent implements OnInit {
+export class RoomShowComponent implements OnInit {
   roomDto: RoomDto | undefined;
   subgroups: SubgroupBasicDto[] = [];
   roomId: string;

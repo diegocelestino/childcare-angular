@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ChildrenRoutingModule } from './children-routing.module';
-import { ChildrenFormComponent } from './children-create-form/children-form.component';
+import { ChildFormComponent } from './child-create-form/child-form.component';
 import {SharedModule} from "../../shared/shared.module";
 import {CoreModule} from "../../core/core.module";
-import { ChildrenShowComponent } from './children-show/children-show.component';
+import { ChildShowComponent } from './child-show/child-show.component';
 import {MatMenuModule} from "@angular/material/menu";
-import { ChildrenUpdateFormComponent } from './children-update-form/children-update-form.component';
+import { ChildUpdateFormComponent } from './child-update-form/child-update-form.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import { ChildrenListComponent } from './children-list/children-list.component';
@@ -16,13 +16,13 @@ import {ObservationsModule} from "../observations/observations.module";
 
 @NgModule({
     declarations: [
-        ChildrenFormComponent,
-        ChildrenShowComponent,
-        ChildrenUpdateFormComponent,
+        ChildFormComponent,
+        ChildShowComponent,
+        ChildUpdateFormComponent,
         ChildrenListComponent,
     ],
     exports: [
-        ChildrenFormComponent,
+        ChildFormComponent,
         ChildrenListComponent
     ],
   imports: [

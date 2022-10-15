@@ -8,11 +8,11 @@ import {ObservationCreateDto, ObservationType} from "../../../core/models/observ
 import {first} from "rxjs";
 
 @Component({
-  selector: 'app-observations-form',
-  templateUrl: './observations-form.component.html',
-  styleUrls: ['./observations-form.component.scss']
+  selector: 'app-observation-form',
+  templateUrl: './observation-form.component.html',
+  styleUrls: ['./observation-form.component.scss']
 })
-export class ObservationsFormComponent implements OnInit {
+export class ObservationFormComponent implements OnInit {
   form: FormGroup;
   submitted: boolean = false;
   childId: string;

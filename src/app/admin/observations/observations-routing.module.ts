@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ChildrenFormComponent} from "../children/children-create-form/children-form.component";
-import {ObservationsFormComponent} from "./observations-form/observations-form.component";
+import {ChildFormComponent} from "../children/child-create-form/child-form.component";
+import {ObservationFormComponent} from "./observation-form/observation-form.component";
 
 const routes: Routes = [
   {
     path: ':childId',
-    component: ObservationsFormComponent,
+    component: ObservationFormComponent,
   },
 ];
 

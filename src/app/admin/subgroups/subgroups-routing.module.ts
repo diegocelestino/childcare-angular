@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {RoomsComponent} from "../rooms/rooms.component";
 import {RoomsListComponent} from "../rooms/rooms-list/rooms-list.component";
-import {RoomsFormComponent} from "../rooms/rooms-form/rooms-form.component";
+import {RoomFormComponent} from "../rooms/room-form/room-form.component";
 import {SubgroupsComponent} from "./subgroups.component";
-import {SubgroupsFormComponent} from "./subgroups-form/subgroups-form.component";
-import {SubgroupsShowComponent} from "./subgroups-show/subgroups-show.component";
+import {SubgroupFormComponent} from "./subgroup-form/subgroup-form.component";
+import {SubgroupShowComponent} from "./subgroup-show/subgroup-show.component";
 
 const routes: Routes = [
   {
@@ -14,11 +14,11 @@ const routes: Routes = [
     children: [
       {
         path: 'new',
-        component: SubgroupsFormComponent,
+        component: SubgroupFormComponent,
       },
       {
         path: ':subgroupId',
-        component: SubgroupsShowComponent,
+        component: SubgroupShowComponent,
       },
     ]
   }

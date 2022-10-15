@@ -7,7 +7,6 @@ export interface ChildDto {
   registrationNumber: string,
   registrationDate: Date,
   movimentMap: MovimentMap,
-  foodRestriction: string,
   uniformDispatch: string,
   uniformDelivered: boolean,
   census: boolean,

@@ -7,11 +7,11 @@ import {NotificationService} from "../../../core/services/notification.service";
 import {first} from "rxjs";
 
 @Component({
-  selector: 'app-children-update-form',
-  templateUrl: './children-update-form.component.html',
-  styleUrls: ['./children-update-form.component.scss']
+  selector: 'app-child-update-form',
+  templateUrl: './child-update-form.component.html',
+  styleUrls: ['./child-update-form.component.scss']
 })
-export class ChildrenUpdateFormComponent implements OnInit {
+export class ChildUpdateFormComponent implements OnInit {
   form: FormGroup;
   submitted: boolean = false;
   childId: string;
@@ -55,7 +55,6 @@ export class ChildrenUpdateFormComponent implements OnInit {
       registrationNumber: [''],
       registrationDate: [''],
       movimentMap: [''],
-      foodRestriction: [''],
       uniformDispatch: [''],
       uniformDelivered: [''],
       census: [''],

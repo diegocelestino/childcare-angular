@@ -7,11 +7,11 @@ import {Cycle, Period, SubgroupCreateDto} from "../../../core/models/subgroups.m
 import {RoomListDto} from "../../../core/models/room.model";
 
 @Component({
-  selector: 'app-subgroups-form',
-  templateUrl: './subgroups-form.component.html',
-  styleUrls: ['./subgroups-form.component.scss']
+  selector: 'app-subgroup-form',
+  templateUrl: './subgroup-form.component.html',
+  styleUrls: ['./subgroup-form.component.scss']
 })
-export class SubgroupsFormComponent implements OnInit {
+export class SubgroupFormComponent implements OnInit {
   form: FormGroup;
   periodClass = Period;
   cycleClass = Cycle;

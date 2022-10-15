@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubgroupsFormComponent } from './subgroups-form.component';
+import { SubgroupShowComponent } from './subgroup-show.component';
 
-describe('SubgroupsFormComponent', () => {
-  let component: SubgroupsFormComponent;
-  let fixture: ComponentFixture<SubgroupsFormComponent>;
+describe('SubgroupsShowComponent', () => {
+  let component: SubgroupShowComponent;
+  let fixture: ComponentFixture<SubgroupShowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubgroupsFormComponent ]
+      declarations: [ SubgroupShowComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SubgroupsFormComponent);
+    fixture = TestBed.createComponent(SubgroupShowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

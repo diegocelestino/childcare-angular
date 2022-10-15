@@ -6,11 +6,11 @@ import {first} from "rxjs";
 import {ChildService} from "../../../core/services/child.service";
 
 @Component({
-  selector: 'app-children-show',
-  templateUrl: './children-show.component.html',
-  styleUrls: ['./children-show.component.scss']
+  selector: 'app-child-show',
+  templateUrl: './child-show.component.html',
+  styleUrls: ['./child-show.component.scss']
 })
-export class ChildrenShowComponent implements OnInit {
+export class ChildShowComponent implements OnInit {
   childDto: ChildDto | undefined;
   childId: string;
 

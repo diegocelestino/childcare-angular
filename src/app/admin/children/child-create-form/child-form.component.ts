@@ -7,11 +7,11 @@ import {ChildCreateDto, MovimentMap} from "../../../core/models/child.model";
 import {first} from "rxjs";
 
 @Component({
-  selector: 'app-children-create-form',
-  templateUrl: './children-form.component.html',
-  styleUrls: ['./children-form.component.scss']
+  selector: 'app-child-create-form',
+  templateUrl: './child-form.component.html',
+  styleUrls: ['./child-form.component.scss']
 })
-export class ChildrenFormComponent implements OnInit {
+export class ChildFormComponent implements OnInit {
   form: FormGroup;
   submitted: boolean = false;
   subgroupId: string;

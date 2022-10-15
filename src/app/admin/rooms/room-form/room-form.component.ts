@@ -6,11 +6,11 @@ import {RoomService} from "../../../core/services/room.service";
 import {NotificationService} from "../../../core/services/notification.service";
 
 @Component({
-  selector: 'app-rooms-form',
-  templateUrl: './rooms-form.component.html',
-  styleUrls: ['./rooms-form.component.scss']
+  selector: 'app-room-form',
+  templateUrl: './room-form.component.html',
+  styleUrls: ['./room-form.component.scss']
 })
-export class RoomsFormComponent implements OnInit {
+export class RoomFormComponent implements OnInit {
 
   form: FormGroup;
   submitted: boolean = false;
