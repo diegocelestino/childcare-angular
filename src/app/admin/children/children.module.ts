@@ -9,6 +9,7 @@ import {ChildUpdateFormComponent} from './child-update-form/child-update-form.co
 import {ChildrenListComponent} from './children-list/children-list.component';
 import {ObservationsModule} from "../observations/observations.module";
 import {GuardiansModule} from "../guardians/guardians.module";
+import {ContactsModule} from "../contacts/contacts.module";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {GuardiansModule} from "../guardians/guardians.module";
         SharedModule,
         ObservationsModule,
         GuardiansModule,
+        ContactsModule,
     ]
 })
 export class ChildrenModule { }

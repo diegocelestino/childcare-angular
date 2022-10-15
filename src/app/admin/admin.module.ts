@@ -8,6 +8,7 @@ import {SubgroupsComponent} from './subgroups/subgroups.component';
 import {ChildrenComponent} from './children/children.component';
 import {ObservationsComponent} from './observations/observations.component';
 import { GuardiansComponent } from './guardians/guardians.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { GuardiansComponent } from './guardians/guardians.component';
         ChildrenComponent,
         ObservationsComponent,
         GuardiansComponent,
+        ContactsComponent,
     ],
     exports: [
         AdminComponent

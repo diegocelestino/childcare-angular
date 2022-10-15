@@ -10,6 +10,7 @@ import { CyclePipe } from './pipes/cycle.pipe';
 import {MatMenuModule} from "@angular/material/menu";
 import { MovimentMapPipe } from './pipes/moviment-map.pipe';
 import { ObservationTypePipe } from './pipes/observation-type.pipe';
+import { OwnerTypePipe } from './pipes/owner-type.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ObservationTypePipe } from './pipes/observation-type.pipe';
     PeriodPipe,
     CyclePipe,
     MovimentMapPipe,
-    ObservationTypePipe
+    ObservationTypePipe,
+    OwnerTypePipe
   ],
 
     exports: [

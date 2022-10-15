@@ -1,21 +1,40 @@
-import {SubgroupDto} from "./subgroups.model";
+import {ChildBasicDto} from "./child.model";
 
-export interface TeacherDto {
+
+export interface ContactDto {
   id: string;
-  name: string;
+  ownerName: string;
+  ownerType: OwnerType;
+  cellphone: string;
+  child: ChildBasicDto;
+
 }
 
-export class TeacherCreateDto {
-  name: string;
-  subgroupId: string;
+export class ContactCreateDto {
+  ownerName: string;
+  ownerType: OwnerType;
+  cellphone: string;
+  childId: string;
 
   constructor(
-    name: string,
-    subgroupId: string,
+    ownerName: string,
+    ownerType: OwnerType,
+    cellphone: string,
+    childId: string
   ) {
-    this.name = name;
-    this.subgroupId = subgroupId;
+    this.ownerName = ownerName;
+    this.ownerType = ownerType;
+    this.cellphone = cellphone;
+    this.childId = childId;
   }
+}
+
+export enum OwnerType {
+  FATHER = ("Pai"),
+  MOTHER = ("Mãe"),
+  SISTER = ("Irmã"),
+  BROTHER = ("Irmão"),
+  OTHER = ("Outros"),
 }
 
 
