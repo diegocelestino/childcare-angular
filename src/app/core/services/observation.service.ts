@@ -22,4 +22,8 @@ export class ObservationService extends BaseService{
   getObservationsByChildId(childId: string): Observable<ObservationDto[]> {
     return this.httpClient.get<ObservationDto[]>(this.apiUrl + "/" + childId, this.httpOptions);
   }
+
+  deleteObservation(observationId: string): Observable<unknown> {
+    return this.httpClient.delete<unknown>(this.apiUrl + "/" + observationId, this.httpOptions);
+  }
 }

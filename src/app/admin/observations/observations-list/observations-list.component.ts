@@ -6,6 +6,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {LoaderService} from "../../../core/services/loader.service";
 import {first} from "rxjs";
 import {ObservationService} from "../../../core/services/observation.service";
+import {NotificationService} from "../../../core/services/notification.service";
 
 @Component({
   selector: 'app-observations-list',
@@ -15,14 +16,14 @@ import {ObservationService} from "../../../core/services/observation.service";
 export class ObservationsListComponent implements OnInit {
   observationsDto: ObservationDto[] =[]
   childId: string;
-  displayedColumns: string[] = ['observationType', 'description'];
+  displayedColumns: string[] = ['observationType', 'description', 'actions'];
 
 
   constructor(
     private observationService: ObservationService,
     private route: ActivatedRoute,
     private router: Router,
-    private loaderService: LoaderService,
+    private notificationService: NotificationService,
   ) {
     this.childId = this.route.snapshot.paramMap.get('childId')!;
   }
@@ -42,9 +43,18 @@ export class ObservationsListComponent implements OnInit {
       )
   }
 
-  backLink() {
-
+  deleteObservation(observationId: string) {
+    this.observationService.deleteObservation(observationId)
+      .pipe(first())
+      .subscribe({
+        next: ()=> {
+          this.notificationService.success("Observação excluída com sucesso");
+          this.getObservationsByChildId(this.childId);
+        },
+        }
+      )
   }
+
 
   newObservation(childId: string) {
     this.router.navigate(['admin', 'observations', childId]);
