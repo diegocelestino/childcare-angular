@@ -47,7 +47,4 @@ export class RoomsShowComponent implements OnInit {
     return this.router.navigate(['admin', 'rooms']);
   }
 
-  openSubgroup(subgroupId: string) {
-    return this.router.navigate(['admin', 'subgroups', subgroupId]);
-  }
 }

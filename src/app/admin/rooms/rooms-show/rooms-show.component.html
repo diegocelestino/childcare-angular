@@ -29,15 +29,16 @@
 
       <br>
 
-      <mat-grid-list cols="3" rowHeight="3:1">
-        <mat-grid-tile *ngFor="let subgroup of subgroups">
-          <mat-card class="room-card-title" (click)="openSubgroup(subgroup.id)">
-            <mat-card-title>
-              {{  subgroup.period | period  }}
-            </mat-card-title>
-          </mat-card>
-        </mat-grid-tile>
-      </mat-grid-list>
+      <app-subgroups-list></app-subgroups-list>
+<!--      <mat-grid-list cols="3" rowHeight="3:1">-->
+<!--        <mat-grid-tile *ngFor="let subgroup of subgroups">-->
+<!--          <mat-card class="room-card-title" (click)="openSubgroup(subgroup.id)">-->
+<!--            <mat-card-title>-->
+<!--              {{  subgroup.period | period  }}-->
+<!--            </mat-card-title>-->
+<!--          </mat-card>-->
+<!--        </mat-grid-tile>-->
+<!--      </mat-grid-list>-->
 
     </article>
   </app-admin-page>

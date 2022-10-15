@@ -12,6 +12,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {MatDialogModule} from "@angular/material/dialog";
 import { RoomsShowComponent } from './rooms-show/rooms-show.component';
 import {MatMenuModule} from "@angular/material/menu";
+import {SubgroupsModule} from "../subgroups/subgroups.module";
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {MatMenuModule} from "@angular/material/menu";
         MatExpansionModule,
         MatDialogModule,
         MatMenuModule,
+        SubgroupsModule,
     ]
 })
 export class RoomsModule { }

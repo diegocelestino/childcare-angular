@@ -10,13 +10,19 @@ import {MatSelectModule} from "@angular/material/select";
 import { SubgroupsShowComponent } from './subgroups-show/subgroups-show.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {ChildrenModule} from "../children/children.module";
+import { SubgroupsListComponent } from './subgroups-list/subgroups-list.component';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 
 @NgModule({
   declarations: [
 
     SubgroupsFormComponent,
-     SubgroupsShowComponent
+    SubgroupsShowComponent,
+    SubgroupsListComponent
+  ],
+  exports: [
+    SubgroupsListComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +32,7 @@ import {ChildrenModule} from "../children/children.module";
     SharedModule,
     MatMenuModule,
     ChildrenModule,
+    MatGridListModule,
 
   ]
 })
