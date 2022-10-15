@@ -29,7 +29,8 @@ import { OwnerTypePipe } from './pipes/owner-type.pipe';
         PeriodPipe,
         CyclePipe,
         MovimentMapPipe,
-        ObservationTypePipe
+        ObservationTypePipe,
+        OwnerTypePipe
     ],
 
   imports: [

@@ -40,7 +40,7 @@ export class ContactsListComponent implements OnInit {
   }
 
   newContact(childId: string) {
-    this.router.navigate(['admin', 'guardians', childId]);
+    this.router.navigate(['admin', 'contacts', childId]);
   }
 
   deleteContact(contactId: string) {

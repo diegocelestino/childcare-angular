@@ -1,0 +1,36 @@
+<app-admin-page pageTitle="Adicionar Contato">
+
+  <div class="container__table">
+    <button mat-menu-item (click)="backLink()">
+      <mat-icon>arrow_back</mat-icon>
+      <span>Voltar</span>
+    </button>
+  </div>
+
+  <form id="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="ownerName" name="ownerName">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Tipo</mat-label>
+      <mat-select formControlName="ownerType" name="ownerType" placeholder="Tipo">
+        <mat-option *ngFor="let type of ownerTypeKeys" [value]="type">
+          {{type | ownerType | titlecase}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Celular</mat-label>
+      <input matInput formControlName="cellphone" name="cellphone">
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button class="button button-red" type="reset" mat-button form="contact-form" color="secondary" (click)="backLink()">Cancelar</button>
+      <button class="button button-white" type="submit" mat-raised-button form="contact-form" color="primary">Cadastrar</button>
+    </mat-card-actions>
+  </form>
+</app-admin-page>
