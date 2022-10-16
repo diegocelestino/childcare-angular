@@ -3,7 +3,7 @@ import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {BaseService} from "./base.service";
 import {Observable} from "rxjs";
-import {TeacherDto} from "../models/teacher.model";
+import {TeacherCreateDto, TeacherDto} from "../models/teacher.model";
 
 @Injectable({
   providedIn: 'root'
@@ -23,4 +23,9 @@ export class TeacherService extends BaseService {
   deleteTeacher(teacherId: string): Observable<unknown> {
     return this.httpClient.delete<unknown>(this.apiUrl + "/" + teacherId, this.httpOptions);
   }
+
+  postTeacher(teacherCreateDto: TeacherCreateDto): Observable<TeacherDto> {
+    return this.httpClient.post<TeacherDto>(this.apiUrl, teacherCreateDto, this.httpOptions);
+  }
+
 }

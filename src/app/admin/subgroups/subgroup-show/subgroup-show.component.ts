@@ -44,13 +44,15 @@ export class SubgroupShowComponent implements OnInit {
     )
   }
 
+  appendTeacher() {
+
+  }
+
   addNewChild() {
     this.router.navigate(['admin','children', 'new', this.subgroupId])
   }
 
-  addNewTeacher() {
 
-  }
 
 
   backLink() {

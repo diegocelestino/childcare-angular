@@ -38,7 +38,7 @@ export class TeachersListComponent implements OnInit {
   }
 
   newTeacher() {
-    this.router.navigate(['admin', 'teachers']);
+    this.router.navigate(['admin', 'teachers', 'new']);
   }
 
   deleteTeacher(teacherId: string) {

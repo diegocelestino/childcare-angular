@@ -7,8 +7,12 @@
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="openRoomsList()">
-        <mat-icon>home</mat-icon>
-        <span>Início</span>
+        <mat-icon>keyboard_arrow_right</mat-icon>
+        <span>Salas</span>
+      </button>
+      <button mat-menu-item (click)="openTeachersList()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+        <span>Professores</span>
       </button>
       <button mat-menu-item (click)="openRoomsForm()">
         <mat-icon>add_circle</mat-icon>

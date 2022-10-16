@@ -22,5 +22,7 @@ export class AdminHeaderComponent implements OnInit {
     return this.router.navigate(['admin', 'rooms']);
   }
 
-
+  openTeachersList() {
+    return this.router.navigate(['admin', 'teachers']);
+  }
 }

@@ -8,14 +8,11 @@ export interface TeacherDto {
 
 export class TeacherCreateDto {
   name: string;
-  subgroupId: string;
 
   constructor(
     name: string,
-    subgroupId: string,
   ) {
     this.name = name;
-    this.subgroupId = subgroupId;
   }
 }
 

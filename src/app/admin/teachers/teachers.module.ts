@@ -5,11 +5,13 @@ import { TeachersRoutingModule } from './teachers-routing.module';
 import { TeachersListComponent } from './teachers-list/teachers-list.component';
 import {CoreModule} from "../../core/core.module";
 import {SharedModule} from "../../shared/shared.module";
+import { TeacherFormComponent } from './teacher-form/teacher-form.component';
 
 
 @NgModule({
   declarations: [
-    TeachersListComponent
+    TeachersListComponent,
+    TeacherFormComponent
   ],
     imports: [
         CommonModule,
