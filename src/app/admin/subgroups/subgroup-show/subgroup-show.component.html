@@ -13,11 +13,29 @@
     </div>
 
     <div class="link2">
-      <button mat-menu-item (click)="addNewChild()">
-        <mat-icon>add_circle</mat-icon>
-        <span>Adicionar nova Criança</span>
+      <button mat-menu-item [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <div class="link2-right">
+          <span>Opções</span>
+          <mat-icon>settings</mat-icon>
+        </div>
       </button>
+
+      <mat-menu #menu="matMenu" xPosition="after">
+        <button mat-menu-item (click)="addNewTeacher()">
+          <mat-icon>add_circle</mat-icon>
+          <span>Adicionar nova Prof</span>
+        </button>
+        <button mat-menu-item (click)="addNewChild()">
+          <mat-icon>add_circle</mat-icon>
+          <span>Adicionar nova Criança</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
     </div>
+
 
 
   <article class="container">

@@ -48,9 +48,15 @@ export class SubgroupShowComponent implements OnInit {
     this.router.navigate(['admin','children', 'new', this.subgroupId])
   }
 
+  addNewTeacher() {
+
+  }
+
 
   backLink() {
     this.router.navigate(['admin','rooms', this.subgroupDto?.room.id]);
 
   }
+
+
 }

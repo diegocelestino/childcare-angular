@@ -1,8 +1,9 @@
-import {SubgroupDto} from "./subgroups.model";
+import {SubgroupBasicDto} from "./subgroups.model";
 
 export interface TeacherDto {
   id: string;
   name: string;
+  subgroups: SubgroupBasicDto
 }
 
 export class TeacherCreateDto {

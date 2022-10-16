@@ -37,6 +37,11 @@ const routes: Routes = [
         loadChildren: () => import('./contacts/contacts.module').then(m => m.ContactsModule),
         title: 'Contatos'
       },
+      {
+        path: 'teachers',
+        loadChildren: () => import('./teachers/teachers.module').then(m => m.TeachersModule),
+        title: 'Professoras e Professores'
+      },
     ]
   }
 ];

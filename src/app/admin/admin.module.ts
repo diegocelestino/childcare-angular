@@ -9,6 +9,7 @@ import {ChildrenComponent} from './children/children.component';
 import {ObservationsComponent} from './observations/observations.component';
 import { GuardiansComponent } from './guardians/guardians.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { TeachersComponent } from './teachers/teachers.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ContactsComponent } from './contacts/contacts.component';
         ObservationsComponent,
         GuardiansComponent,
         ContactsComponent,
+        TeachersComponent,
     ],
     exports: [
         AdminComponent
