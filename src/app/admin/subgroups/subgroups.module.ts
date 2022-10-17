@@ -7,6 +7,7 @@ import {SharedModule} from "../../shared/shared.module";
 import {SubgroupShowComponent} from './subgroup-show/subgroup-show.component';
 import {ChildrenModule} from "../children/children.module";
 import {SubgroupsListComponent} from './subgroups-list/subgroups-list.component';
+import { SubgroupsRegisterComponent } from './subgroups-register/subgroups-register.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {SubgroupsListComponent} from './subgroups-list/subgroups-list.component'
 
     SubgroupFormComponent,
     SubgroupShowComponent,
-    SubgroupsListComponent
+    SubgroupsListComponent,
+    SubgroupsRegisterComponent
   ],
   exports: [
     SubgroupsListComponent

@@ -2,8 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {NotificationService} from "../../../core/services/notification.service";
 import {first} from "rxjs";
-import {TeacherDto} from "../../../core/models/teacher.model";
+import {TeacherCreateDto, TeacherDto} from "../../../core/models/teacher.model";
 import {TeacherService} from "../../../core/services/teacher.service";
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {RoomService} from "../../../core/services/room.service";
+import {RoomDto} from "../../../core/models/room.model";
 
 @Component({
   selector: 'app-teachers-list',
@@ -11,15 +14,18 @@ import {TeacherService} from "../../../core/services/teacher.service";
   styleUrls: ['./teachers-list.component.scss']
 })
 export class TeachersListComponent implements OnInit {
-  teachersDto: TeacherDto[] =[]
-  displayedColumns: string[] = ['name', 'subgroups'];
+  teachersDto: TeacherDto[] =[];
+  displayedColumns: string[] = ['name', 'subgroups', 'delete'];
+
 
   constructor(
+    private formBuilder: FormBuilder,
     private teacherService: TeacherService,
     private route: ActivatedRoute,
     private router: Router,
     private notificationService: NotificationService,
   ) {
+
   }
 
   ngOnInit(): void {
@@ -36,11 +42,6 @@ export class TeachersListComponent implements OnInit {
         }
       )
   }
-
-  newTeacher() {
-    this.router.navigate(['admin', 'teachers', 'new']);
-  }
-
   deleteTeacher(teacherId: string) {
     this.teacherService.deleteTeacher(teacherId)
       .pipe(first())
@@ -51,5 +52,13 @@ export class TeachersListComponent implements OnInit {
           },
         }
       )
+  }
+
+  newTeacher() {
+    this.router.navigate(['admin', 'teachers', 'new']);
+  }
+
+  goToSubgroup(subgroupId: string) {
+    this.router.navigate(['admin', 'subgroups', subgroupId]);
   }
 }

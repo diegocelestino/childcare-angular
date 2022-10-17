@@ -16,4 +16,24 @@ export class TeacherCreateDto {
   }
 }
 
+export class RegisterTeacherCreateDto {
+  subgroupId: string;
+  teacherId: string;
+
+  constructor(
+    subgroupId: string,
+    teacherId: string,
+  ) {
+    this.subgroupId = subgroupId;
+    this.teacherId = teacherId;
+  }
+}
+
+export interface RegisterTeacherDto {
+  subgroupId: string;
+  teacherId: string;
+}
+
+
+
 

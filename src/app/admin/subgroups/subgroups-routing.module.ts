@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {SubgroupsComponent} from "./subgroups.component";
 import {SubgroupFormComponent} from "./subgroup-form/subgroup-form.component";
 import {SubgroupShowComponent} from "./subgroup-show/subgroup-show.component";
+import {SubgroupsRegisterComponent} from "./subgroups-register/subgroups-register.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: ':subgroupId',
         component: SubgroupShowComponent,
+      },
+      {
+        path: 'register/:subgroupId',
+        component: SubgroupsRegisterComponent,
       },
     ]
   }

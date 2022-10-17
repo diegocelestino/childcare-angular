@@ -59,6 +59,6 @@ export class TeacherFormComponent implements OnInit {
   }
 
   backLink() {
-    return this.router.navigate(['admin','rooms']);
+    return this.router.navigate(['admin','teachers']);
   }
 }

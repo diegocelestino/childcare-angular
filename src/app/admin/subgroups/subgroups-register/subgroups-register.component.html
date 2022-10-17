@@ -1,0 +1,27 @@
+<app-admin-page pageTitle="Registrar Professor(a)">
+
+  <div class="container__table">
+    <button mat-menu-item (click)="backLink()">
+      <mat-icon>arrow_back</mat-icon>
+      <span>Voltar</span>
+    </button>
+  </div>
+
+  <form id="register-teacher-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Select</mat-label>
+        <mat-select formControlName="teacher">
+          <mat-option *ngFor="let teacher of teachersDto" [value]="teacher.id">
+            {{ teacher.name }}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button class="button button-red" type="reset" mat-button form="register-teacher-form" color="secondary" (click)="backLink()">Cancelar</button>
+      <button class="button button-white" type="submit" mat-raised-button form="register-teacher-form" color="primary">Registrar</button>
+    </mat-card-actions>
+  </form>
+</app-admin-page>

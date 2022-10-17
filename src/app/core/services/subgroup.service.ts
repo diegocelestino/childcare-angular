@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BaseService} from "./base.service";
 import {HttpClient} from "@angular/common/http";
-import {map, Observable} from "rxjs";
-import {RoomDto} from "../models/room.model";
-import {SubgroupBasicDto, SubgroupCreateDto, SubgroupDto} from "../models/subgroups.model";
+import {Observable} from "rxjs";
+import {SubgroupCreateDto, SubgroupDto} from "../models/subgroups.model";
 import {environment} from "../../../environments/environment";
+import {RegisterTeacherCreateDto} from "../models/teacher.model";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,8 @@ import {environment} from "../../../environments/environment";
 export class SubgroupService extends BaseService{
   apiUrl = `${environment.apiUrl}/subgroup`;
   byRoom = '?roomId='
+  registerTeacher = '/registerTeacher'
+  unregisterTeacher = '/unregisterTeacher'
 
   constructor(private httpClient: HttpClient) {
     super();
@@ -27,5 +29,14 @@ export class SubgroupService extends BaseService{
 
   getSubgroupsByRoomById(roomId: string): Observable<SubgroupDto[]> {
     return this.httpClient.get<SubgroupDto[]>(this.apiUrl + this.byRoom + roomId, this.httpOptions);
+  }
+
+  postRegisterTeacherOnSubgroup(registerTeacherCreateDto: RegisterTeacherCreateDto): Observable<SubgroupDto> {
+    return this.httpClient.post<SubgroupDto>(this.apiUrl + this.registerTeacher, registerTeacherCreateDto, this.httpOptions);
+  }
+
+  postUnregisterTeacherOnSubgroup(unregisterTeacherDto: RegisterTeacherCreateDto): Observable<SubgroupDto> {
+    return this.httpClient.post<SubgroupDto>(this.apiUrl + this.unregisterTeacher, unregisterTeacherDto, this.httpOptions);
+
   }
 }

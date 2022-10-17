@@ -25,9 +25,34 @@
 
 .link2 {
   display: inline-block;
-  text-align: end;
+  float: right;
   width:50%;
-  border-right: -moz-mac-accentdarkestshadow;
+}
+
+.link2-right {
+  text-align: right;
+}
+
+.container__table{
+  width:100%;
+  text-align: left;
+}
+
+.container__table td:hover{
+  cursor:pointer
+}
+
+.delete-button {
+  text-align: right;
+}
+
+.teacher-name {
+  width: 100%;
+  text-align: left;
+}
+
+.teachers-table {
+  margin-bottom: 40px;
 }
 
 
