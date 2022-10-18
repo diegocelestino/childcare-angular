@@ -10,9 +10,15 @@ import {Observable} from "rxjs";
 })
 export class ObservationService extends BaseService{
   apiUrl = `${environment.apiUrl}/observation`;
+  byChildId = '/by?childId=';
+  update = '/update/'
 
   constructor(private httpClient: HttpClient) {
     super();
+  }
+
+  getObservation(observationId: string): Observable<ObservationDto> {
+    return this.httpClient.get<ObservationDto>(this.apiUrl + "/" + observationId, this.httpOptions);
   }
 
   postObservation(observationCreateDto: ObservationCreateDto): Observable<ObservationDto> {
@@ -20,10 +26,14 @@ export class ObservationService extends BaseService{
   }
 
   getObservationsByChildId(childId: string): Observable<ObservationDto[]> {
-    return this.httpClient.get<ObservationDto[]>(this.apiUrl + "/" + childId, this.httpOptions);
+    return this.httpClient.get<ObservationDto[]>(this.apiUrl + this.byChildId + childId, this.httpOptions);
   }
 
   deleteObservation(observationId: string): Observable<unknown> {
     return this.httpClient.delete<unknown>(this.apiUrl + "/" + observationId, this.httpOptions);
+  }
+
+  putObservation(observationDto: ObservationDto): Observable<ObservationDto> {
+    return this.httpClient.put<ObservationDto>(this.apiUrl, observationDto, this.httpOptions);
   }
 }

@@ -74,7 +74,7 @@ export class ChildUpdateFormComponent implements OnInit {
   }
 
   private updateChild() {
-    this.childService.putAccount(this.form.value)
+    this.childService.putChild(this.form.value)
       .pipe(first())
       .subscribe({
         next: childDto => {

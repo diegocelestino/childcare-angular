@@ -11,19 +11,28 @@
 <table mat-table class="container__table" [dataSource]="observationsDto">
   <ng-container matColumnDef="observationType">
     <th mat-header-cell *matHeaderCellDef>Tipo</th>
-    <td mat-cell *matCellDef="let element">{{ element.observationType | observationType | titlecase }}</td>
+    <td class="left1" mat-cell *matCellDef="let element">{{ element.observationType | observationType | titlecase }}</td>
   </ng-container>
 
   <ng-container matColumnDef="description">
     <th mat-header-cell *matHeaderCellDef>Descrição</th>
-    <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+    <td class="left2" mat-cell *matCellDef="let element">{{ element.description }}</td>
   </ng-container>
 
-  <ng-container matColumnDef="actions">
+  <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef>Excluir</th>
     <td mat-cell *matCellDef="let element">
-      <button mat-icon-button (click)="deleteObservation(element.id)">
+      <button class="right" mat-icon-button (click)="deleteObservation(element.id)">
       <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef>Editar</th>
+    <td mat-cell *matCellDef="let element">
+      <button class="right" mat-icon-button (click)="editObservation(element.id)">
+        <mat-icon>edit</mat-icon>
       </button>
     </td>
   </ng-container>

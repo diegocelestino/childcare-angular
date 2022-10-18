@@ -15,7 +15,7 @@ import {NotificationService} from "../../../core/services/notification.service";
 export class ObservationsListComponent implements OnInit {
   observationsDto: ObservationDto[] =[]
   childId: string;
-  displayedColumns: string[] = ['observationType', 'description', 'actions'];
+  displayedColumns: string[] = ['observationType', 'description', 'delete', 'edit'];
 
 
   constructor(
@@ -52,6 +52,10 @@ export class ObservationsListComponent implements OnInit {
         },
         }
       )
+  }
+
+  editObservation(observationId: string) {
+    this.router.navigate(['admin', 'observations', 'update', observationId]);
   }
 
   newObservation(childId: string) {

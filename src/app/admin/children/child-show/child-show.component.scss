@@ -1,3 +1,7 @@
+.child-information-table {
+  margin-bottom: 30px;
+}
+
 .link1 {
   display: inline-block;
   text-align: left;
@@ -16,8 +20,12 @@
 
 .childDisplay {
   display: inline-block;
-  //margin-right: 20px;
-  width: 25%;
+  width: 20%;
+}
+
+.display {
+  display: inline-block;
+  width: 50%;
 }
 
 

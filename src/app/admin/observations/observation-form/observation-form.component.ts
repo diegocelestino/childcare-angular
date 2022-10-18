@@ -32,7 +32,6 @@ export class ObservationFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.childId);
   }
 
   onSubmit() {

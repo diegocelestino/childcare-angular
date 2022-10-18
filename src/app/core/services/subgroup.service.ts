@@ -37,6 +37,5 @@ export class SubgroupService extends BaseService{
 
   postUnregisterTeacherOnSubgroup(unregisterTeacherDto: RegisterTeacherCreateDto): Observable<SubgroupDto> {
     return this.httpClient.post<SubgroupDto>(this.apiUrl + this.unregisterTeacher, unregisterTeacherDto, this.httpOptions);
-
   }
 }

@@ -6,6 +6,7 @@ export interface ObservationDto {
   observationType: ObservationType;
   description: string;
   child: ChildBasicDto;
+
 }
 
 export class ObservationCreateDto {

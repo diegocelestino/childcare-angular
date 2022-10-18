@@ -15,7 +15,7 @@
 
   <ng-container matColumnDef="ownerType">
     <th mat-header-cell *matHeaderCellDef>Relação</th>
-    <td mat-cell *matCellDef="let element">{{ element.ownerType }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.ownerType | ownerType | titlecase}}</td>
   </ng-container>
 
   <ng-container matColumnDef="cellphone">

@@ -25,7 +25,7 @@ export class ChildService extends BaseService{
     return this.httpClient.get<ChildDto>(this.apiUrl + "/" + childId, this.httpOptions)
   }
 
-  putAccount(childDto: ChildDto): Observable<ChildDto> {
+  putChild(childDto: ChildDto): Observable<ChildDto> {
     return  this.httpClient.put<ChildDto>(this.apiUrl, childDto, this.httpOptions);
   }
 

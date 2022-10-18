@@ -7,12 +7,14 @@ import { ObservationFormComponent } from './observation-form/observation-form.co
 import {SharedModule} from "../../shared/shared.module";
 import {CoreModule} from "../../core/core.module";
 import {MatMenuModule} from "@angular/material/menu";
+import { ObservationUpdateFormComponent } from './observation-update-form/observation-update-form.component';
 
 
 @NgModule({
   declarations: [
     ObservationsListComponent,
-    ObservationFormComponent
+    ObservationFormComponent,
+    ObservationUpdateFormComponent
   ],
     exports: [
         ObservationFormComponent,
