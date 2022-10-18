@@ -27,4 +27,13 @@ export class ContactService extends BaseService{
   postContact(contactCreateDto: ContactCreateDto): Observable<ContactDto> {
     return this.httpClient.post<ContactDto>(this.apiUrl, contactCreateDto, this.httpOptions);
   }
+
+  getContact(contactId: string): Observable<ContactDto> {
+    return this.httpClient.get<ContactDto>(this.apiUrl + "/" + contactId, this.httpOptions);
+  }
+
+  putContact(contactUpdateDto: ContactDto): Observable<ContactDto> {
+    return this.httpClient.put<ContactDto>(this.apiUrl, contactUpdateDto, this.httpOptions);
+
+  }
 }

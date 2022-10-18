@@ -13,7 +13,7 @@ import {ContactService} from "../../../core/services/contact.service";
 export class ContactsListComponent implements OnInit {
   contactsDto: ContactDto[] =[]
   childId: string;
-  displayedColumns: string[] = ['ownerName', 'ownerType', 'cellphone', 'actions'];
+  displayedColumns: string[] = ['ownerName', 'ownerType', 'cellphone', 'delete', 'edit'];
 
   constructor(
     private contactService: ContactService,
@@ -39,10 +39,6 @@ export class ContactsListComponent implements OnInit {
       )
   }
 
-  newContact(childId: string) {
-    this.router.navigate(['admin', 'contacts', childId]);
-  }
-
   deleteContact(contactId: string) {
     this.contactService.deleteContact(contactId)
       .pipe(first())
@@ -53,5 +49,13 @@ export class ContactsListComponent implements OnInit {
           },
         }
       )
+  }
+
+  newContact(childId: string) {
+    this.router.navigate(['admin', 'contacts', childId]);
+  }
+
+  editContact(contactId: string) {
+    this.router.navigate(['admin', 'contacts','update', contactId]);
   }
 }

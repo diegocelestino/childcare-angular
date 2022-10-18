@@ -12,6 +12,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { TeachersComponent } from './teachers/teachers.component';
 
 
+
 @NgModule({
     declarations: [
         AdminComponent,

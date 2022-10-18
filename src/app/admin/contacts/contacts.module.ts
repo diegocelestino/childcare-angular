@@ -6,13 +6,15 @@ import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import {SharedModule} from "../../shared/shared.module";
 import {CoreModule} from "../../core/core.module";
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ContactUpdateFormComponent } from './contact-update-form/contact-update-form.component';
 
 
 @NgModule({
   declarations: [
 
     ContactsListComponent,
-     ContactFormComponent
+     ContactFormComponent,
+     ContactUpdateFormComponent
   ],
   exports: [
     ContactsListComponent

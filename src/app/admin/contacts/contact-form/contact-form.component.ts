@@ -5,7 +5,6 @@ import {NotificationService} from "../../../core/services/notification.service";
 import {first} from "rxjs";
 import {ContactCreateDto, OwnerType} from "../../../core/models/contact.model";
 import {ContactService} from "../../../core/services/contact.service";
-import {ObservationType} from "../../../core/models/observation.model";
 
 @Component({
   selector: 'app-contact-form',
