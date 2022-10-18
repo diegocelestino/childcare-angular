@@ -13,7 +13,7 @@ import {first} from "rxjs";
 export class GuardiansListComponent implements OnInit {
   guardiansDto: GuardianDto[] =[]
   childId: string;
-  displayedColumns: string[] = ['name', 'cpf', 'actions'];
+  displayedColumns: string[] = ['name', 'cpf', 'delete', 'edit'];
 
   constructor(
     private guardianService: GuardianService,
@@ -39,10 +39,6 @@ export class GuardiansListComponent implements OnInit {
       )
   }
 
-  newGuardian(childId: string) {
-    this.router.navigate(['admin', 'guardians', childId]);
-  }
-
   deleteGuardian(guardianId: string) {
     this.guardianService.deleteGuardian(guardianId)
       .pipe(first())
@@ -53,5 +49,13 @@ export class GuardiansListComponent implements OnInit {
           },
         }
       )
+  }
+
+  editGuardian(guardianId: string) {
+    this.router.navigate(['admin', 'guardians', 'update', guardianId]);
+  }
+
+  newGuardian(childId: string) {
+    this.router.navigate(['admin', 'guardians', childId]);
   }
 }

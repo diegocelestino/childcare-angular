@@ -1,0 +1,27 @@
+<app-admin-page pageTitle="Editar Responsável">
+
+  <div class="container__table">
+    <button mat-menu-item (click)="backLink()">
+      <mat-icon>arrow_back</mat-icon>
+      <span>Voltar</span>
+    </button>
+  </div>
+
+  <form id="guardian-update-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="name" name="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="cpf" name="cpf">
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button class="button button-red" type="reset" mat-button form="guardian-update-form" color="secondary" (click)="backLink()">Cancelar</button>
+      <button class="button button-white" type="submit" mat-raised-button form="guardian-update-form" color="primary">Cadastrar</button>
+    </mat-card-actions>
+  </form>
+</app-admin-page>

@@ -1,8 +1,10 @@
+import {ChildBasicDto} from "./child.model";
 
 export interface GuardianDto {
   id: string;
   name: string;
   cpf: string;
+  child: ChildBasicDto;
 }
 
 export class GuardianCreateDto {
